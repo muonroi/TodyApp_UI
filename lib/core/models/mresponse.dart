@@ -1,5 +1,5 @@
 class MResponse<T> {
-  final T result;
+  final T? result;
   final String id;
   final DateTime utcTime;
   final List<String> errorMessages;
@@ -15,11 +15,8 @@ class MResponse<T> {
 
   factory MResponse.fromJson(
       Map<String, dynamic> json, T Function(dynamic data) fromJson) {
-    if (json['result'] == null) {
-      throw Exception("Invalid response structure from API");
-    }
     return MResponse(
-      result: fromJson(json['result']),
+      result: json['result'] != null ? fromJson(json['result']) : null,
       id: json['id'] ?? '',
       utcTime: DateTime.parse(json['utcTime'].toString()),
       errorMessages: List<String>.from(json['errorMessages'] ?? []),

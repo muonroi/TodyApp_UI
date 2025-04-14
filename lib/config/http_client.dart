@@ -17,5 +17,3 @@ Dio createDio() {
   );
   return dioInstance;
 }
-
-final Dio dio = createDio();

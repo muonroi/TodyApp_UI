@@ -25,12 +25,12 @@ class _ErrorDialogWidgetState extends ConsumerState<ErrorDialogWidget> {
               barrierDismissible: false,
               builder: (context) {
                 return AlertDialog(
-                  title: const Text("Danh sách lỗi"),
+                  title: const Text("Error List"),
                   content: SingleChildScrollView(
                     child: DataTable(
                       columns: const [
-                        DataColumn(label: Text("Mã lỗi")),
-                        DataColumn(label: Text("Thông báo lỗi")),
+                        DataColumn(label: Text("Error Code")),
+                        DataColumn(label: Text("Error Message")),
                       ],
                       rows: errors.map((error) {
                         return DataRow(cells: [
@@ -46,7 +46,7 @@ class _ErrorDialogWidgetState extends ConsumerState<ErrorDialogWidget> {
                         Navigator.of(context).pop();
                         _isDialogShowing = false;
                       },
-                      child: const Text("Đóng"),
+                      child: const Text("Close"),
                     )
                   ],
                 );

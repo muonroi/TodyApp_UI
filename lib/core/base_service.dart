@@ -1,95 +1,237 @@
-// base_service.dart
+import 'package:dio/dio.dart';
 import 'package:tudy/core/models/mresponse.dart';
+import 'package:tudy/core/providers/error_dialog_provider.dart';
+import 'package:flutter/foundation.dart';
 
 import 'base_api_client.dart';
-import 'package:dio/dio.dart';
 
 class BaseService {
   final BaseApiClient apiClient;
+  final ErrorDialogService errorDialogService;
 
-  BaseService({required this.apiClient});
+  BaseService({
+    required this.apiClient,
+    required this.errorDialogService,
+  });
 
-  Future<MPagingResponse<T>> getPagedData<T>(
-    String url, {
-    Map<String, dynamic>? params,
-    required T Function(dynamic) fromJson,
-  }) async {
-    final data = await apiClient.get(url, params: params);
-    return MPagingResponse<T>.fromJson(data, fromJson);
+  void _showBusinessErrorDialog(List<String> errorMessages) {
+    final formattedErrors = errorMessages
+        .map((msg) => {
+              'errorCode': 'Lỗi nghiệp vụ',
+              'errorMessage': msg,
+            })
+        .toList();
+    errorDialogService.show(formattedErrors);
   }
 
-  Future<MResponse<T>> getData<T>(
+  Future<T?> getData<T>(
     String url, {
     Map<String, dynamic>? params,
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.get(url, params: params);
-    return MResponse<T>.fromJson(data, fromJson);
-  }
+    try {
+      final data = await apiClient.get(url, params: params);
 
-  Future<MResponse<List<T>>> getListData<T>(
-    String url, {
-    Map<String, dynamic>? params,
-    required T Function(dynamic) fromJson,
-  }) async {
-    final data = await apiClient.get(url, params: params);
-    if (data['result'] == null) {
-      throw Exception("Invalid response structure from API");
+      final response = MResponse<T>.fromJson(data, fromJson);
+
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+
+      return response.result;
+    } on DioException catch (e) {
+      if (kDebugMode) {
+        print("DioException in BaseService.getData: ${e.message}");
+      }
+
+      return null;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Error in BaseService.getData: $e");
+      }
+
+      return null;
     }
-    List<T> items =
-        (data['result'] as List).map((item) => fromJson(item)).toList();
-    return MResponse<List<T>>(
-      result: items,
-      id: data['id'] ?? '',
-      utcTime: DateTime.parse(data['utcTime'].toString()),
-      errorMessages: List<String>.from(data['errorMessages'] ?? []),
-      isOK: data['isOK'] ?? false,
-    );
   }
 
-  Future<MResponse<T>> postData<T>(
+  Future<List<T>?> getListData<T>(
+    String url, {
+    Map<String, dynamic>? params,
+    required T Function(dynamic) fromJson,
+  }) async {
+    try {
+      final data = await apiClient.get(url, params: params);
+
+      final isOK = data['isOK'] ?? false;
+      final errorMessages = List<String>.from(data['errorMessages'] ?? []);
+
+      if (!isOK) {
+        _showBusinessErrorDialog(errorMessages);
+        return null;
+      }
+
+      if (data['result'] == null) {
+        if (kDebugMode) {
+          print(
+              "Error in BaseService.getListData: result is null although isOK was true.");
+        }
+        return null;
+      }
+      List<T> items =
+          (data['result'] as List).map((item) => fromJson(item)).toList();
+      return items;
+    } on DioException catch (e) {
+      if (kDebugMode) {
+        print("DioException in BaseService.getListData: ${e.message}");
+      }
+      return null;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Error in BaseService.getListData: $e");
+      }
+      return null;
+    }
+  }
+
+  Future<MPagingResponse<T>?> getPagedData<T>(
+    String url, {
+    Map<String, dynamic>? params,
+    required T Function(dynamic) fromJson,
+  }) async {
+    try {
+      final data = await apiClient.get(url, params: params);
+      final response = MPagingResponse<T>.fromJson(data, fromJson);
+
+      if (!response.responseInfo.isOK) {
+        _showBusinessErrorDialog(response.responseInfo.errorMessages);
+        return null;
+      }
+      return response;
+    } on DioException catch (e) {
+      if (kDebugMode) {
+        print("DioException in BaseService.getPagedData: ${e.message}");
+      }
+      return null;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Error in BaseService.getPagedData: $e");
+      }
+      return null;
+    }
+  }
+
+  Future<T?> postData<T>(
     String url,
     dynamic body, {
     Map<String, dynamic>? params,
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.post(url, body, params: params);
-    return MResponse<T>.fromJson(data, fromJson);
+    try {
+      final data = await apiClient.post(url, body, params: params);
+      final response = MResponse<T>.fromJson(data, fromJson);
+
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+      return response.result;
+    } on DioException catch (e) {
+      if (kDebugMode) {
+        print("DioException in BaseService.postData: ${e.message}");
+      }
+      return null;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Error in BaseService.postData: $e");
+      }
+      return null;
+    }
   }
 
-  Future<MResponse<T>> patchData<T>(
+  Future<T?> patchData<T>(
     String url,
     dynamic body, {
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.patch(url, body);
-    return MResponse<T>.fromJson(data, fromJson);
+    try {
+      final data = await apiClient.patch(url, body);
+      final response = MResponse<T>.fromJson(data, fromJson);
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+      return response.result;
+    } on DioException catch (e) {
+      debugPrint("DioException in BaseService.patchData: ${e.message}");
+      return null;
+    } catch (e) {
+      return null;
+    }
   }
 
-  Future<MResponse<T>> putData<T>(
+  Future<T?> putData<T>(
     String url,
     dynamic body, {
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.put(url, body);
-    return MResponse<T>.fromJson(data, fromJson);
+    try {
+      final data = await apiClient.put(url, body);
+      final response = MResponse<T>.fromJson(data, fromJson);
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+      return response.result;
+    } on DioException catch (e) {
+      debugPrint("DioException in BaseService.patchData: ${e.message}");
+      return null;
+    } catch (e) {
+      return null;
+    }
   }
 
-  Future<MResponse<T>> putDataFormData<T>(
+  Future<T?> putDataFormData<T>(
     String url,
     FormData body, {
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.put(url, body, isFormData: true);
-    return MResponse<T>.fromJson(data, fromJson);
+    try {
+      final data = await apiClient.put(url, body, isFormData: true);
+      final response = MResponse<T>.fromJson(data, fromJson);
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+      return response.result;
+    } on DioException catch (e) {
+      debugPrint("DioException in BaseService.patchData: ${e.message}");
+      return null;
+    } catch (e) {
+      return null;
+    }
   }
 
-  Future<MResponse<T>> deleteData<T>(
+  Future<T?> deleteData<T>(
     String url, {
     Map<String, dynamic>? params,
     required T Function(dynamic) fromJson,
   }) async {
-    final data = await apiClient.delete(url, params: params);
-    return MResponse<T>.fromJson(data, fromJson);
+    try {
+      final data = await apiClient.delete(url, params: params);
+
+      final response = MResponse<T>.fromJson(data, fromJson);
+      if (!response.isOK) {
+        _showBusinessErrorDialog(response.errorMessages);
+        return null;
+      }
+
+      return response.result;
+    } on DioException catch (e) {
+      debugPrint("DioException in BaseService.patchData: ${e.message}");
+      return null;
+    } catch (e) {
+      return null;
+    }
   }
 }
