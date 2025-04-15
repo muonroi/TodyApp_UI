@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:tudy/core/base_api_client.dart';
 import 'package:tudy/core/base_service.dart';
 import 'package:tudy/core/intercepters/auth.dart';
@@ -11,7 +12,7 @@ final tokenStorageProvider = Provider<TokenStorage>((ref) {
 }, name: 'TokenStorage');
 
 final errorDialogServiceProvider = Provider<ErrorDialogService>((ref) {
-  return ErrorDialogService();
+  return ErrorDialogService(ref);
 }, name: 'ErrorDialogService');
 
 final dioProvider = Provider<Dio>((ref) {
@@ -39,12 +40,27 @@ final baseApiClientProvider = Provider<BaseApiClient>((ref) {
   final dio = ref.watch(dioProvider);
   return BaseApiClient(dio);
 }, name: 'BaseApiClient');
-
+final loggerProvider = Provider<Logger>(
+  (ref) {
+    return Logger(
+      printer: PrettyPrinter(
+        methodCount: 2,
+        errorMethodCount: 8,
+        lineLength: 120,
+        colors: true,
+        printEmojis: true,
+        dateTimeFormat: DateTimeFormat.onlyTimeAndSinceStart,
+      ),
+    );
+  },
+  name: 'Logger',
+);
 final baseServiceProvider = Provider<BaseService>((ref) {
   final apiClient = ref.watch(baseApiClientProvider);
   final errorDialogService = ref.watch(errorDialogServiceProvider);
+  final logger = ref.watch(loggerProvider);
   return BaseService(
-    apiClient: apiClient,
-    errorDialogService: errorDialogService,
-  );
+      apiClient: apiClient,
+      errorDialogService: errorDialogService,
+      log: logger);
 }, name: 'BaseService');

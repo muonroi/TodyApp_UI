@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:logger/logger.dart';
 import 'package:tudy/core/models/mresponse.dart';
 import 'package:tudy/core/providers/error_dialog_provider.dart';
 import 'package:flutter/foundation.dart';
@@ -8,10 +9,11 @@ import 'base_api_client.dart';
 class BaseService {
   final BaseApiClient apiClient;
   final ErrorDialogService errorDialogService;
-
+  final Logger log;
   BaseService({
     required this.apiClient,
     required this.errorDialogService,
+    required this.log,
   });
 
   void _showBusinessErrorDialog(List<String> errorMessages) {
@@ -40,17 +42,9 @@ class BaseService {
       }
 
       return response.result;
-    } on DioException catch (e) {
-      if (kDebugMode) {
-        print("DioException in BaseService.getData: ${e.message}");
-      }
-
+    } on DioException catch (_) {
       return null;
     } catch (e) {
-      if (kDebugMode) {
-        print("Error in BaseService.getData: $e");
-      }
-
       return null;
     }
   }
@@ -72,24 +66,14 @@ class BaseService {
       }
 
       if (data['result'] == null) {
-        if (kDebugMode) {
-          print(
-              "Error in BaseService.getListData: result is null although isOK was true.");
-        }
         return null;
       }
       List<T> items =
           (data['result'] as List).map((item) => fromJson(item)).toList();
       return items;
-    } on DioException catch (e) {
-      if (kDebugMode) {
-        print("DioException in BaseService.getListData: ${e.message}");
-      }
+    } on DioException catch (_) {
       return null;
     } catch (e) {
-      if (kDebugMode) {
-        print("Error in BaseService.getListData: $e");
-      }
       return null;
     }
   }
@@ -136,15 +120,9 @@ class BaseService {
         return null;
       }
       return response.result;
-    } on DioException catch (e) {
-      if (kDebugMode) {
-        print("DioException in BaseService.postData: ${e.message}");
-      }
+    } on DioException catch (_) {
       return null;
-    } catch (e) {
-      if (kDebugMode) {
-        print("Error in BaseService.postData: $e");
-      }
+    } catch (_) {
       return null;
     }
   }

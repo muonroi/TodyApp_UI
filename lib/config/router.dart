@@ -9,6 +9,8 @@ import 'package:tudy/features/home/presentation/home.dart';
 import 'package:tudy/features/auth/presentation/pages/login_page.dart';
 import 'package:tudy/features/auth/presentation/register_screen.dart';
 
+final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
+
 class RouteName {
   static const String home = '/';
   static const String login = '/login';
@@ -24,6 +26,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
   });
 
   return GoRouter(
+    navigatorKey: rootNavigatorKey,
     refreshListenable: refreshNotifier,
     initialLocation: RouteName.login,
     redirect: (BuildContext context, GoRouterState state) {

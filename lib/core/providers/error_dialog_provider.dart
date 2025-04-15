@@ -1,28 +1,41 @@
-import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ErrorDialogService {
-  final _errorController =
-      StreamController<List<Map<String, String>>>.broadcast();
+typedef ErrorInfo = List<Map<String, String>>;
 
-  Stream<List<Map<String, String>>> get errorStream => _errorController.stream;
+class ErrorStateNotifier extends StateNotifier<AsyncValue<ErrorInfo>> {
+  ErrorStateNotifier() : super(const AsyncValue.data([]));
 
-  void show(List<Map<String, String>> errors) {
-    _errorController.add(errors);
+  void setErrors(ErrorInfo errors) {
+    if (errors.isNotEmpty) {
+      state = AsyncValue.data(errors);
+    } else {
+      clearErrors();
+    }
   }
 
-  void dispose() {
-    _errorController.close();
+  void clearErrors() {
+    if (state is! AsyncData<ErrorInfo> ||
+        (state as AsyncData<ErrorInfo>).value.isNotEmpty) {
+      state = const AsyncValue.data([]);
+    }
+  }
+
+  void setInternalError(Object error, StackTrace stackTrace) {
+    state = AsyncValue.error(error, stackTrace);
   }
 }
 
-final errorDialogServiceProvider = Provider<ErrorDialogService>((ref) {
-  final service = ErrorDialogService();
-  ref.onDispose(() => service.dispose());
-  return service;
+final errorStateNotifierProvider =
+    StateNotifierProvider<ErrorStateNotifier, AsyncValue<ErrorInfo>>((ref) {
+  return ErrorStateNotifier();
 });
 
-final errorStreamProvider = StreamProvider<List<Map<String, String>>>((ref) {
-  final service = ref.watch(errorDialogServiceProvider);
-  return service.errorStream;
-});
+class ErrorDialogService {
+  final Ref ref;
+
+  ErrorDialogService(this.ref);
+
+  void show(List<Map<String, String>> errors) {
+    ref.read(errorStateNotifierProvider.notifier).setErrors(errors);
+  }
+}

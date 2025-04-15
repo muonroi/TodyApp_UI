@@ -19,7 +19,11 @@ class MResponse<T> {
       result: json['result'] != null ? fromJson(json['result']) : null,
       id: json['id'] ?? '',
       utcTime: DateTime.parse(json['utcTime'].toString()),
-      errorMessages: List<String>.from(json['errorMessages'] ?? []),
+      errorMessages: json['errorMessages'] != null
+          ? (json['errorMessages'] as List)
+              .map((item) => item['errorMessage'] as String)
+              .toList()
+          : [],
       isOK: json['isOK'] ?? false,
     );
   }
@@ -85,7 +89,11 @@ class MPagingResponse<T> {
       result: null,
       id: json['id'] ?? '',
       utcTime: DateTime.parse(json['utcTime'].toString()),
-      errorMessages: List<String>.from(json['errorMessages'] ?? []),
+      errorMessages: json['errorMessages'] != null
+          ? (json['errorMessages'] as List)
+              .map((item) => item['errorMessage'] as String)
+              .toList()
+          : [],
       isOK: json['isOK'] ?? false,
     );
     return MPagingResponse<T>(
