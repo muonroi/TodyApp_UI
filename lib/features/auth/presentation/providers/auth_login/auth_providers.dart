@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tudy/features/auth/presentation/providers/auth_notifier.dart';
-import '../../domain/providers/usecase_providers.dart';
+import 'package:tudy/features/auth/presentation/providers/auth_login/auth_notifier.dart';
+import '../../../domain/providers/usecase_providers.dart';
 
 final authNotifierProvider =
     StateNotifierProvider<AuthNotifier, AuthState>((ref) {

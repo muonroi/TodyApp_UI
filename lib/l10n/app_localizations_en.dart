@@ -70,4 +70,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginSuccessMessage => 'Login successful! Welcome back!';
+
+  @override
+  String get registrationSuccessMessage => 'Registration successful! Welcome aboard!';
+
+  @override
+  String get registrationFailedMessage => 'Registration failed! Please try again.';
+
+  @override
+  String get emailValidationErrorEmpty => 'Please enter your email';
+
+  @override
+  String get emailValidationErrorInvalid => 'Please enter a valid email';
+
+  @override
+  String get phoneValidationErrorEmpty => 'Please enter your phone number';
+
+  @override
+  String get phoneValidationErrorInvalid => 'Please enter a valid phone number';
+
+  @override
+  String get fullNameValidationErrorEmpty => 'Please enter your full name';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get enterEmailHint => 'Enter your email';
+
+  @override
+  String get enterPhoneNumberHint => 'Enter your phone number';
+
+  @override
+  String get enterFullNameHint => 'Enter your full name';
+
+  @override
+  String get passwordValidationErrorLength => 'Password must be at least 8 characters long';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get enterConfirmPasswordHint => 'Enter your confirm password';
+
+  @override
+  String get confirmPasswordValidationErrorEmpty => 'Please enter your confirm password';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get registerButton => 'REGISTER';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account? ';
+
+  @override
+  String get usernameValidationErrorLength => 'Username has invalid length (maximum 50)';
+
+  @override
+  String get usernameValidationErrorChars => 'Username contains invalid characters (a-z, A-Z) and numbers (0-9) and _';
+
+  @override
+  String get fullNameValidationErrorMinWords => 'Full name must contain at least 2 words';
+
+  @override
+  String get passwordValidationErrorComplexity => 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
 }

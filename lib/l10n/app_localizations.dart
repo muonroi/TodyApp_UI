@@ -220,6 +220,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login successful! Welcome back!'**
   String get loginSuccessMessage;
+
+  /// No description provided for @registrationSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration successful! Welcome aboard!'**
+  String get registrationSuccessMessage;
+
+  /// No description provided for @registrationFailedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration failed! Please try again.'**
+  String get registrationFailedMessage;
+
+  /// No description provided for @emailValidationErrorEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get emailValidationErrorEmpty;
+
+  /// No description provided for @emailValidationErrorInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get emailValidationErrorInvalid;
+
+  /// No description provided for @phoneValidationErrorEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your phone number'**
+  String get phoneValidationErrorEmpty;
+
+  /// No description provided for @phoneValidationErrorInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid phone number'**
+  String get phoneValidationErrorInvalid;
+
+  /// No description provided for @fullNameValidationErrorEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your full name'**
+  String get fullNameValidationErrorEmpty;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @enterEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get enterEmailHint;
+
+  /// No description provided for @enterPhoneNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterPhoneNumberHint;
+
+  /// No description provided for @enterFullNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get enterFullNameHint;
+
+  /// No description provided for @passwordValidationErrorLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 8 characters long'**
+  String get passwordValidationErrorLength;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @enterConfirmPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your confirm password'**
+  String get enterConfirmPasswordHint;
+
+  /// No description provided for @confirmPasswordValidationErrorEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your confirm password'**
+  String get confirmPasswordValidationErrorEmpty;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @registerButton.
+  ///
+  /// In en, this message translates to:
+  /// **'REGISTER'**
+  String get registerButton;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? '**
+  String get alreadyHaveAccount;
+
+  /// No description provided for @usernameValidationErrorLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Username has invalid length (maximum 50)'**
+  String get usernameValidationErrorLength;
+
+  /// No description provided for @usernameValidationErrorChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Username contains invalid characters (a-z, A-Z) and numbers (0-9) and _'**
+  String get usernameValidationErrorChars;
+
+  /// No description provided for @fullNameValidationErrorMinWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name must contain at least 2 words'**
+  String get fullNameValidationErrorMinWords;
+
+  /// No description provided for @passwordValidationErrorComplexity.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'**
+  String get passwordValidationErrorComplexity;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

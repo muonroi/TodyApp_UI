@@ -6,6 +6,7 @@ import 'package:tudy/features/auth/domain/usecases/login_usecase.dart';
 import 'package:tudy/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:tudy/features/auth/domain/usecases/refresh_token_usecase.dart';
 part 'auth_state.dart';
+part '../auth_register/auth_register_state.dart';
 
 class AuthNotifier extends StateNotifier<AuthState> {
   final LoginUseCase _loginUseCase;
@@ -23,7 +24,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         _logoutUseCase = logoutUseCase,
         _getCachedUserUseCase = getCachedUserUseCase,
         super(AuthInitial()) {
-    //checkInitialAuthStatus();
+    //  checkInitialAuthStatus();
   }
 
   Future<void> checkInitialAuthStatus() async {

@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tudy/features/auth/domain/usecases/register_usecase.dart';
 
 import '../../data/providers/repository_providers.dart';
 
@@ -27,3 +28,9 @@ final getCachedUserUseCaseProvider = Provider<GetCachedUserUseCase>((ref) {
   final repository = ref.watch(authRepositoryProvider);
   return GetCachedUserUseCase(repository);
 }, name: 'GetCachedUserUseCase');
+
+final registerUseCaseProvider = Provider<RegisterUseCase>((ref) {
+  final repository = ref.watch(authRepositoryProvider);
+
+  return RegisterUseCase(repository);
+}, name: 'RegisterUseCase');

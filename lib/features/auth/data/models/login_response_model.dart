@@ -1,10 +1,10 @@
 import 'package:hive/hive.dart';
 import '../../domain/entities/user.dart';
 
-part 'user_model.g.dart';
+part 'login_response_model.g.dart';
 
 @HiveType(typeId: 0)
-class UserModel extends User {
+class LoginResponseModel extends User {
   @override
   @HiveField(0)
   final String id;
@@ -49,7 +49,7 @@ class UserModel extends User {
   @HiveField(10)
   final bool isActive;
 
-  UserModel({
+  LoginResponseModel({
     required this.id,
     required this.username,
     required this.accessToken,
@@ -63,8 +63,8 @@ class UserModel extends User {
     required this.isActive,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
+  factory LoginResponseModel.fromJson(Map<String, dynamic> json) {
+    return LoginResponseModel(
       id: json['id'] ?? '',
       username: json['username'] ?? '',
       accessToken: json['accessToken'] ?? '',

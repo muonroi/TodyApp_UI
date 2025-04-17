@@ -43,8 +43,10 @@ class BaseService {
 
       return response.result;
     } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -72,8 +74,10 @@ class BaseService {
           (data['result'] as List).map((item) => fromJson(item)).toList();
       return items;
     } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -121,8 +125,10 @@ class BaseService {
       }
       return response.result;
     } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -140,10 +146,11 @@ class BaseService {
         return null;
       }
       return response.result;
-    } on DioException catch (e) {
-      debugPrint("DioException in BaseService.patchData: ${e.message}");
+    } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -161,10 +168,11 @@ class BaseService {
         return null;
       }
       return response.result;
-    } on DioException catch (e) {
-      debugPrint("DioException in BaseService.patchData: ${e.message}");
+    } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -182,10 +190,11 @@ class BaseService {
         return null;
       }
       return response.result;
-    } on DioException catch (e) {
-      debugPrint("DioException in BaseService.patchData: ${e.message}");
+    } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }
@@ -205,10 +214,11 @@ class BaseService {
       }
 
       return response.result;
-    } on DioException catch (e) {
-      debugPrint("DioException in BaseService.patchData: ${e.message}");
+    } on DioException catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
-    } catch (e) {
+    } catch (_) {
+      _showBusinessErrorDialog(["Lỗi kết nối"]);
       return null;
     }
   }

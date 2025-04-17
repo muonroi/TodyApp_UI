@@ -70,4 +70,76 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get loginSuccessMessage => 'Đăng nhập thành công! Chào mừng trở lại!';
+
+  @override
+  String get registrationSuccessMessage => 'Đăng ký thành công! Chào mừng bạn!';
+
+  @override
+  String get registrationFailedMessage => 'Đăng ký không thành công! Vui lòng thử lại.';
+
+  @override
+  String get emailValidationErrorEmpty => 'Vui lòng nhập email';
+
+  @override
+  String get emailValidationErrorInvalid => 'Vui lòng nhập email hợp lệ';
+
+  @override
+  String get phoneValidationErrorEmpty => 'Vui lòng nhập số điện thoại';
+
+  @override
+  String get phoneValidationErrorInvalid => 'Vui lòng nhập số điện thoại hợp lệ';
+
+  @override
+  String get fullNameValidationErrorEmpty => 'Vui lòng nhập họ tên của bạn';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get phone => 'Số điện thoại';
+
+  @override
+  String get fullName => 'Họ tên';
+
+  @override
+  String get enterEmailHint => 'Nhập email của bạn';
+
+  @override
+  String get enterPhoneNumberHint => 'Nhập số điện thoại của bạn';
+
+  @override
+  String get enterFullNameHint => 'Nhập họ tên của bạn';
+
+  @override
+  String get passwordValidationErrorLength => 'Mật khẩu phải có ít nhất 6 ký tự';
+
+  @override
+  String get confirmPassword => 'Xác nhận mật khẩu';
+
+  @override
+  String get enterConfirmPasswordHint => 'Nhập lại mật khẩu của bạn';
+
+  @override
+  String get confirmPasswordValidationErrorEmpty => 'Vui lòng xác nhận mật khẩu';
+
+  @override
+  String get passwordsDoNotMatch => 'Mật khẩu không khớp';
+
+  @override
+  String get registerButton => 'ĐĂNG KÝ';
+
+  @override
+  String get alreadyHaveAccount => 'Đã có tài khoản? ';
+
+  @override
+  String get usernameValidationErrorLength => 'Tên đăng nhập có độ dài không hợp lệ (<50)';
+
+  @override
+  String get usernameValidationErrorChars => 'Username contains invalid characters (a-z, A-Z) and numbers (0-9) and _';
+
+  @override
+  String get fullNameValidationErrorMinWords => 'Full name must contain at least 2 words';
+
+  @override
+  String get passwordValidationErrorComplexity => 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
 }

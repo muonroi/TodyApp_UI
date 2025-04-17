@@ -1,11 +1,12 @@
 import 'package:tudy/features/auth/data/models/login_model.dart';
 import 'package:tudy/features/auth/data/models/refresh_token_model.dart';
+import 'package:tudy/features/auth/data/models/register_model.dart';
 
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../datasources/auth_local_data_source.dart';
 import '../datasources/auth_remote_data_source.dart';
-import '../models/user_model.dart';
+import '../models/login_response_model.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
@@ -18,14 +19,14 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<bool> login(String username, String password) async {
-    final userModel = await remoteDataSource.login(LoginModel(
+    final loginResponseModel = await remoteDataSource.login(LoginModel(
       username: username,
       password: password,
     ));
-    if (userModel == null) {
+    if (loginResponseModel == null) {
       return false;
     }
-    await localDataSource.cacheUser(userModel);
+    await localDataSource.cacheUser(loginResponseModel);
     return true;
   }
 
@@ -44,10 +45,28 @@ class AuthRepositoryImpl implements AuthRepository {
     final response = await remoteDataSource.refreshToken(RefreshTokenModel(
         refreshToken: refreshToken, accessToken: accessToken));
     if (response['result'] != null) {
-      final updatedUserModel = UserModel.fromJson(response['result']);
+      final updatedUserModel = LoginResponseModel.fromJson(response['result']);
       await localDataSource.cacheUser(updatedUserModel);
       return true;
     }
     return false;
+  }
+
+  @override
+  Future<bool> register(String username, String password, String emailAddress,
+      String name, String surname, String phoneNumber) async {
+    final loginResponseModel = await remoteDataSource.register(RegisterModel(
+      username: username,
+      password: password,
+      email: emailAddress,
+      name: name,
+      surname: surname,
+      phoneNumber: phoneNumber,
+    ));
+    if (loginResponseModel == null) {
+      return false;
+    }
+    await localDataSource.cacheUser(loginResponseModel);
+    return true;
   }
 }

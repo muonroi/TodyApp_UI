@@ -2,9 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tudy/config/app_assets.dart';
-import 'package:tudy/features/auth/presentation/providers/auth_notifier.dart';
-import 'package:tudy/features/auth/presentation/providers/auth_providers.dart';
+import 'package:tudy/config/router.dart';
+import 'package:tudy/features/auth/presentation/providers/auth_login/auth_notifier.dart';
+import 'package:tudy/features/auth/presentation/providers/auth_login/auth_providers.dart';
 import 'package:tudy/l10n/app_localizations.dart';
 
 class LoginForm extends ConsumerStatefulWidget {
@@ -45,7 +47,7 @@ class _LoginFormState extends ConsumerState<LoginForm> {
   }
 
   void _navigateToRegister() {
-    debugPrint('Navigate to Register Screen');
+    context.go(RouteName.register);
   }
 
   Widget _buildDivider(AppLocalizations l10n, ThemeData theme) {

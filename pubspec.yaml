@@ -49,3 +49,5 @@ flutter:
         - asset: assets/fonts/Inter/Inter_18pt-Bold.ttf
           weight: 700
   generate: true
+flutter_intl:
+  enabled: true
