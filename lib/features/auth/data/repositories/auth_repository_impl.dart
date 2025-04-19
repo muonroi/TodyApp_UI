@@ -1,3 +1,4 @@
+import 'package:tudy/core/storages/token.dart';
 import 'package:tudy/features/auth/data/models/login_model.dart';
 import 'package:tudy/features/auth/data/models/refresh_token_model.dart';
 import 'package:tudy/features/auth/data/models/register_model.dart';
@@ -11,8 +12,10 @@ import '../models/login_response_model.dart';
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
   final AuthLocalDataSource localDataSource;
+  final TokenStorage tokenStorage;
 
   AuthRepositoryImpl({
+    required this.tokenStorage,
     required this.remoteDataSource,
     required this.localDataSource,
   });
@@ -26,6 +29,8 @@ class AuthRepositoryImpl implements AuthRepository {
     if (loginResponseModel == null) {
       return false;
     }
+    tokenStorage.setAccessToken(loginResponseModel.accessToken);
+    tokenStorage.setRefreshToken(loginResponseModel.refreshToken);
     await localDataSource.cacheUser(loginResponseModel);
     return true;
   }
@@ -46,6 +51,8 @@ class AuthRepositoryImpl implements AuthRepository {
         refreshToken: refreshToken, accessToken: accessToken));
     if (response['result'] != null) {
       final updatedUserModel = LoginResponseModel.fromJson(response['result']);
+      tokenStorage.setAccessToken(updatedUserModel.accessToken);
+      tokenStorage.setRefreshToken(updatedUserModel.refreshToken);
       await localDataSource.cacheUser(updatedUserModel);
       return true;
     }
@@ -66,6 +73,8 @@ class AuthRepositoryImpl implements AuthRepository {
     if (loginResponseModel == null) {
       return false;
     }
+    tokenStorage.setAccessToken(loginResponseModel.accessToken);
+    tokenStorage.setRefreshToken(loginResponseModel.refreshToken);
     await localDataSource.cacheUser(loginResponseModel);
     return true;
   }

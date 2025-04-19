@@ -7,7 +7,7 @@ import 'package:tudy/features/auth/presentation/providers/auth_login/auth_notifi
 import 'package:tudy/features/auth/presentation/providers/auth_login/auth_providers.dart';
 import 'package:tudy/features/auth/presentation/providers/auth_register/auth_register_providers.dart';
 
-import 'package:tudy/features/home/presentation/home.dart';
+import 'package:tudy/features/home/presentation/home_screen.dart';
 import 'package:tudy/features/auth/presentation/register_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();

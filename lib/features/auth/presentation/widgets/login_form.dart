@@ -194,7 +194,7 @@ class _LoginFormState extends ConsumerState<LoginForm> {
                   foregroundColor: Colors.black87,
                   theme: theme,
                 ),
-                if (platform == TargetPlatform.iOS) ...[
+                if (platform == TargetPlatform.android) ...[
                   const SizedBox(width: 16.0),
                   _buildSocialButton(
                     onPressed: _handleAppleSignIn,

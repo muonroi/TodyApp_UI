@@ -142,4 +142,145 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordValidationErrorComplexity => 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
+
+  @override
+  String get searchTitle => 'Search';
+
+  @override
+  String get searchHint => 'Tasks, Projects, and More';
+
+  @override
+  String get recentlyViewed => 'Recently Viewed';
+
+  @override
+  String get upcoming => 'Upcoming';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get inbox => 'Inbox';
+
+  @override
+  String get browse => 'Browse';
+
+  @override
+  String get addTaskTooltip => 'Add Task';
+
+  @override
+  String get addTaskHint => 'e.g., Discuss thesis tomorrow morning p2';
+
+  @override
+  String get descriptionHint => 'Description';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get priority => 'Priority';
+
+  @override
+  String get reminders => 'Reminders';
+
+  @override
+  String get moreOptions => 'More options';
+
+  @override
+  String get taskNameValidationErrorEmpty => 'Please enter a task name';
+
+  @override
+  String get submitTask => 'Add Task';
+
+  @override
+  String get priority1 => 'Priority 1';
+
+  @override
+  String get priority2 => 'Priority 2';
+
+  @override
+  String get priority3 => 'Priority 3';
+
+  @override
+  String get priority4 => 'Priority 4';
+
+  @override
+  String get noTaskFound => 'No tasks found';
+
+  @override
+  String get tomorrow => 'Tomorrow';
+
+  @override
+  String get selectTime => 'Select Time';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get selectDate => 'Select Date';
+
+  @override
+  String get customizePriorities => 'Customize Priorities';
+
+  @override
+  String get manageCategories => 'Manage Categories';
+
+  @override
+  String get time => 'Time';
+
+  @override
+  String get none => 'None';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get nextWeek => 'Next Week';
+
+  @override
+  String get noDate => 'No Date';
+
+  @override
+  String get createNewCategory => 'Create New Category';
+
+  @override
+  String get categoryNameHint => 'Enter category name';
+
+  @override
+  String get create => 'Create';
+
+  @override
+  String get noTasksYet => 'No tasks yet';
+
+  @override
+  String get setReminder => 'Set Reminder';
+
+  @override
+  String get reminder => 'Reminder';
+
+  @override
+  String get repeatsDaily => 'Repeats Daily';
+
+  @override
+  String get selectReminderTime => 'Select Reminder Time';
+
+  @override
+  String get repeatReminder => 'Repeat Reminder';
+
+  @override
+  String get removeReminder => 'Remove Reminder';
+
+  @override
+  String get dailyShort => 'D';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get errorGeneral => 'An error occurred';
+
+  @override
+  String get errorCreatingTask => 'Error creating task';
 }

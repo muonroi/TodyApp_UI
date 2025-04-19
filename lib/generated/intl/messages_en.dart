@@ -22,15 +22,35 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addTaskHint": MessageLookupByLibrary.simpleMessage(
+      "e.g., Discuss thesis tomorrow morning p2",
+    ),
+    "addTaskTooltip": MessageLookupByLibrary.simpleMessage("Add Task"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
     "appleLogin": MessageLookupByLibrary.simpleMessage("Apple"),
+    "browse": MessageLookupByLibrary.simpleMessage("Browse"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "categoryNameHint": MessageLookupByLibrary.simpleMessage(
+      "Enter category name",
+    ),
     "closeButton": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "confirmPasswordValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter your confirm password",
     ),
+    "create": MessageLookupByLibrary.simpleMessage("Create"),
+    "createNewCategory": MessageLookupByLibrary.simpleMessage(
+      "Create New Category",
+    ),
+    "customizePriorities": MessageLookupByLibrary.simpleMessage(
+      "Customize Priorities",
+    ),
+    "dailyShort": MessageLookupByLibrary.simpleMessage("D"),
+    "date": MessageLookupByLibrary.simpleMessage("Date"),
+    "descriptionHint": MessageLookupByLibrary.simpleMessage("Description"),
+    "done": MessageLookupByLibrary.simpleMessage("Done"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter your email",
@@ -55,7 +75,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your username",
     ),
     "errorCodeHeader": MessageLookupByLibrary.simpleMessage("Error Code"),
+    "errorCreatingTask": MessageLookupByLibrary.simpleMessage(
+      "Error creating task",
+    ),
     "errorDialogTitle": MessageLookupByLibrary.simpleMessage("Error List"),
+    "errorGeneral": MessageLookupByLibrary.simpleMessage("An error occurred"),
     "errorMessageHeader": MessageLookupByLibrary.simpleMessage("Error Message"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "fullNameValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
@@ -68,15 +92,26 @@ class MessageLookup extends MessageLookupByLibrary {
       "An error occurred",
     ),
     "googleLogin": MessageLookupByLibrary.simpleMessage("Google"),
+    "inbox": MessageLookupByLibrary.simpleMessage("Inbox"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginButton": MessageLookupByLibrary.simpleMessage("LOGIN"),
     "loginSuccessMessage": MessageLookupByLibrary.simpleMessage(
       "Login successful! Welcome back!",
     ),
+    "manageCategories": MessageLookupByLibrary.simpleMessage(
+      "Manage Categories",
+    ),
+    "moreOptions": MessageLookupByLibrary.simpleMessage("More options"),
+    "nextWeek": MessageLookupByLibrary.simpleMessage("Next Week"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "noDate": MessageLookupByLibrary.simpleMessage("No Date"),
+    "noTaskFound": MessageLookupByLibrary.simpleMessage("No tasks found"),
+    "noTasksYet": MessageLookupByLibrary.simpleMessage("No tasks yet"),
+    "none": MessageLookupByLibrary.simpleMessage("None"),
     "notAvailable": MessageLookupByLibrary.simpleMessage("N/A"),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "orDivider": MessageLookupByLibrary.simpleMessage("Or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordValidationError": MessageLookupByLibrary.simpleMessage(
@@ -98,6 +133,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneValidationErrorInvalid": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "priority": MessageLookupByLibrary.simpleMessage("Priority"),
+    "priority1": MessageLookupByLibrary.simpleMessage("Priority 1"),
+    "priority2": MessageLookupByLibrary.simpleMessage("Priority 2"),
+    "priority3": MessageLookupByLibrary.simpleMessage("Priority 3"),
+    "priority4": MessageLookupByLibrary.simpleMessage("Priority 4"),
+    "recentlyViewed": MessageLookupByLibrary.simpleMessage("Recently Viewed"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registerButton": MessageLookupByLibrary.simpleMessage("REGISTER"),
     "registrationFailedMessage": MessageLookupByLibrary.simpleMessage(
@@ -106,7 +147,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "registrationSuccessMessage": MessageLookupByLibrary.simpleMessage(
       "Registration successful! Welcome aboard!",
     ),
+    "reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
+    "reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
+    "removeReminder": MessageLookupByLibrary.simpleMessage("Remove Reminder"),
+    "repeatReminder": MessageLookupByLibrary.simpleMessage("Repeat Reminder"),
+    "repeatsDaily": MessageLookupByLibrary.simpleMessage("Repeats Daily"),
+    "searchHint": MessageLookupByLibrary.simpleMessage(
+      "Tasks, Projects, and More",
+    ),
+    "searchTitle": MessageLookupByLibrary.simpleMessage("Search"),
+    "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "selectReminderTime": MessageLookupByLibrary.simpleMessage(
+      "Select Reminder Time",
+    ),
+    "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
+    "setReminder": MessageLookupByLibrary.simpleMessage("Set Reminder"),
+    "submitTask": MessageLookupByLibrary.simpleMessage("Add Task"),
+    "taskNameValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter a task name",
+    ),
+    "time": MessageLookupByLibrary.simpleMessage("Time"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
     "tudyAppTitle": MessageLookupByLibrary.simpleMessage("Tudy App"),
+    "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
     "usernameValidationError": MessageLookupByLibrary.simpleMessage(
       "Please enter your username",
@@ -117,5 +181,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "usernameValidationErrorLength": MessageLookupByLibrary.simpleMessage(
       "Username has invalid length (maximum 50)",
     ),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
   };
 }

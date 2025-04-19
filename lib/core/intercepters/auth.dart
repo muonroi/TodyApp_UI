@@ -20,7 +20,7 @@ class AuthInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final token = tokenStorage.getAccessToken();
     if (token != null && token.isNotEmpty) {
-      options.headers["Authorization"] = "Bearer $token";
+      options.headers["Authorization"] = token;
     }
     handler.next(options);
   }

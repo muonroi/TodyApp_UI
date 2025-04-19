@@ -308,7 +308,7 @@ class _RegisterFormState extends ConsumerState<RegisterForm> {
               textAlign: TextAlign.center,
               text: TextSpan(
                 style: textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurface.withOpacity(0.8)),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.8)),
                 children: <TextSpan>[
                   TextSpan(text: "${l10n.alreadyHaveAccount} "),
                   TextSpan(

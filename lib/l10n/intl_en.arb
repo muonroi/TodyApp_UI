@@ -89,5 +89,193 @@
     "fullNameValidationErrorMinWords": "Full name must contain at least 2 words",
     "@fullNameValidationErrorMinWords": {},
     "passwordValidationErrorComplexity": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
-    "@passwordValidationErrorComplexity": {}
+    "@passwordValidationErrorComplexity": {},
+    "searchTitle": "Search",
+    "@searchTitle": {
+        "description": "Title for the Search screen AppBar and label for the Search tab in BottomNavBar"
+    },
+    "searchHint": "Tasks, Projects, and More",
+    "@searchHint": {
+        "description": "Hint text displayed in the search bar"
+    },
+    "recentlyViewed": "Recently Viewed",
+    "@recentlyViewed": {
+        "description": "Section title for recently accessed views/filters"
+    },
+    "upcoming": "Upcoming",
+    "@upcoming": {
+        "description": "Label for the Upcoming tasks view/filter and BottomNavBar tab"
+    },
+    "today": "Today",
+    "@today": {
+        "description": "Label for the Today tasks view/filter, BottomNavBar tab, and default date button"
+    },
+    "inbox": "Inbox",
+    "@inbox": {
+        "description": "Label for the Inbox view/filter and default project"
+    },
+    "browse": "Browse",
+    "@browse": {
+        "description": "Label for the Browse tab in the BottomNavBar"
+    },
+    "addTaskTooltip": "Add Task",
+    "@addTaskTooltip": {
+        "description": "Tooltip for the Floating Action Button used to add a new task"
+    },
+    "addTaskHint": "e.g., Discuss thesis tomorrow morning p2",
+    "@addTaskHint": {
+        "description": "Hint text for the task name input field in the add task sheet"
+    },
+    "descriptionHint": "Description",
+    "@descriptionHint": {
+        "description": "Hint text for the task description input field in the add task sheet"
+    },
+    "date": "Date",
+    "@date": {
+        "description": "Label for the date selection button in the add task sheet"
+    },
+    "priority": "Priority",
+    "@priority": {
+        "description": "Label for the priority selection button in the add task sheet"
+    },
+    "reminders": "Reminders",
+    "@reminders": {
+        "description": "Label for the reminders selection button in the add task sheet"
+    },
+    "moreOptions": "More options",
+    "@moreOptions": {
+        "description": "Tooltip for the 'more options' button in the add task sheet"
+    },
+    "taskNameValidationErrorEmpty": "Please enter a task name",
+    "@taskNameValidationErrorEmpty": {
+        "description": "Error message shown when the task name is empty on submission"
+    },
+    "submitTask": "Add Task",
+    "@submitTask": {
+        "description": "Action label/,tooltip for submitting the new task (distinct from FAB tooltip)"
+    },
+    "priority1": "Priority 1",
+    "@priority1": {
+        "description": "Label for priority level 1"
+    },
+    "priority2": "Priority 2",
+    "@priority2": {
+        "description": "Label for priority level 2"
+    },
+    "priority3": "Priority 3",
+    "@priority3": {
+        "description": "Label for priority level 3"
+    },
+    "priority4": "Priority 4",
+    "@priority4": {
+        "description": "Label for priority level 4 (often default)"
+    },
+    "noTaskFound": "No tasks found",
+    "@noTaskFound": {
+        "description": "Message displayed when no tasks are found in a specific view/filter"
+    },
+    "tomorrow": "Tomorrow",
+    "@tomorrow": {
+        "description": "Label for the Tomorrow tasks view/filter and default date button"
+    },
+    "selectTime": "Select Time",
+    "@selectTime": {
+        "description": "Label for the time selection button in the add task sheet"
+    },
+    "ok": "OK",
+    "@ok": {
+        "description": "Label for the OK button in dialogs and confirmation messages"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Label for the Cancel button in dialogs and confirmation messages"
+    },
+    "selectDate": "Select Date",
+    "@selectDate": {
+        "description": "Label for the date selection button in the add task sheet"
+    },
+    "customizePriorities": "Customize Priorities",
+    "@customizePriorities": {
+        "description": "Label for the button to customize task priorities in the settings screen"
+    },
+    "manageCategories": "Manage Categories",
+    "@manageCategories": {
+        "description": "Label for the button to manage task categories in the settings screen"
+    },
+    "time": "Time",
+    "@time": {
+        "description": "Label for the time selection button in the add task sheet"
+    },
+    "none": "None",
+    "@none": {
+        "description": "Label for the 'None' option in various selection contexts"
+    },
+    "done": "Done",
+    "@done": {
+        "description": "Label for the 'Done' option in various selection contexts"
+    },
+    "nextWeek": "Next Week",
+    "@nextWeek": {
+        "description": "Label for the 'Next Week' option in various selection contexts"
+    },
+    "noDate": "No Date",
+    "@noDate": {
+        "description": "Label for the 'No Date' option in various selection contexts"
+    },
+    "createNewCategory": "Create New Category",
+    "@createNewCategory": {
+        "description": "Label for the button to create a new category in the settings screen"
+    },
+    "categoryNameHint": "Enter category name",
+    "@categoryNameHint": {
+        "description": "Hint text for the category name input field in the create new category dialog"
+    },
+    "create": "Create",
+    "@create": {
+        "description": "Label for the button to create a new category in the create new category dialog"
+    },
+    "noTasksYet": "No tasks yet",
+    "@noTasksYet": {
+        "description": "Message displayed when there are no tasks in the current view/filter"
+    },
+    "setReminder": "Set Reminder",
+    "@setReminder": {
+        "description": "Label for the button to set a reminder for a task"
+    },
+    "reminder": "Reminder",
+    "@reminder": {
+        "description": "Label for the reminder setting in the add task sheet"
+    },
+    "repeatsDaily": "Repeats Daily",
+    "@repeatsDaily": {
+        "description": "Label for the daily repeat option in the reminder settings"
+    },
+    "selectReminderTime": "Select Reminder Time",
+    "@selectReminderTime": {
+        "description": "Label for the time selection button in the reminder settings"
+    },
+    "repeatReminder": "Repeat Reminder",
+    "@repeatReminder": {
+        "description": "Label for the repeat reminder option in the reminder settings"
+    },
+    "removeReminder": "Remove Reminder",
+    "@removeReminder": {
+        "description": "Label for the button to remove a reminder from a task"
+    },
+    "dailyShort": "D",
+    "@dailyShort": {
+        "description": "Short label for daily reminders"
+    },
+    "yesterday": "Yesterday",
+    "@yesterday": {
+        "description": "Label for the Yesterday tasks view/filter and default date button"
+    },
+    "errorGeneral": "An error occurred",
+    "@errorGeneral": {
+        "description": "General error message displayed in various contexts"
+    },
+    "errorCreatingTask": "Error creating task",
+    "@errorCreatingTask": {
+        "description": "Error message displayed when task creation fails"
+    }
 }

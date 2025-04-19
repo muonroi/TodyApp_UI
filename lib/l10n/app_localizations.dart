@@ -364,6 +364,288 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'**
   String get passwordValidationErrorComplexity;
+
+  /// Title for the Search screen AppBar and label for the Search tab in BottomNavBar
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchTitle;
+
+  /// Hint text displayed in the search bar
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks, Projects, and More'**
+  String get searchHint;
+
+  /// Section title for recently accessed views/filters
+  ///
+  /// In en, this message translates to:
+  /// **'Recently Viewed'**
+  String get recentlyViewed;
+
+  /// Label for the Upcoming tasks view/filter and BottomNavBar tab
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get upcoming;
+
+  /// Label for the Today tasks view/filter, BottomNavBar tab, and default date button
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// Label for the Inbox view/filter and default project
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox'**
+  String get inbox;
+
+  /// Label for the Browse tab in the BottomNavBar
+  ///
+  /// In en, this message translates to:
+  /// **'Browse'**
+  String get browse;
+
+  /// Tooltip for the Floating Action Button used to add a new task
+  ///
+  /// In en, this message translates to:
+  /// **'Add Task'**
+  String get addTaskTooltip;
+
+  /// Hint text for the task name input field in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Discuss thesis tomorrow morning p2'**
+  String get addTaskHint;
+
+  /// Hint text for the task description input field in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get descriptionHint;
+
+  /// Label for the date selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// Label for the priority selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get priority;
+
+  /// Label for the reminders selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get reminders;
+
+  /// Tooltip for the 'more options' button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'More options'**
+  String get moreOptions;
+
+  /// Error message shown when the task name is empty on submission
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a task name'**
+  String get taskNameValidationErrorEmpty;
+
+  /// Action label/,tooltip for submitting the new task (distinct from FAB tooltip)
+  ///
+  /// In en, this message translates to:
+  /// **'Add Task'**
+  String get submitTask;
+
+  /// Label for priority level 1
+  ///
+  /// In en, this message translates to:
+  /// **'Priority 1'**
+  String get priority1;
+
+  /// Label for priority level 2
+  ///
+  /// In en, this message translates to:
+  /// **'Priority 2'**
+  String get priority2;
+
+  /// Label for priority level 3
+  ///
+  /// In en, this message translates to:
+  /// **'Priority 3'**
+  String get priority3;
+
+  /// Label for priority level 4 (often default)
+  ///
+  /// In en, this message translates to:
+  /// **'Priority 4'**
+  String get priority4;
+
+  /// Message displayed when no tasks are found in a specific view/filter
+  ///
+  /// In en, this message translates to:
+  /// **'No tasks found'**
+  String get noTaskFound;
+
+  /// Label for the Tomorrow tasks view/filter and default date button
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow'**
+  String get tomorrow;
+
+  /// Label for the time selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Select Time'**
+  String get selectTime;
+
+  /// Label for the OK button in dialogs and confirmation messages
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// Label for the Cancel button in dialogs and confirmation messages
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// Label for the date selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Select Date'**
+  String get selectDate;
+
+  /// Label for the button to customize task priorities in the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Customize Priorities'**
+  String get customizePriorities;
+
+  /// Label for the button to manage task categories in the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Categories'**
+  String get manageCategories;
+
+  /// Label for the time selection button in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get time;
+
+  /// Label for the 'None' option in various selection contexts
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get none;
+
+  /// Label for the 'Done' option in various selection contexts
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// Label for the 'Next Week' option in various selection contexts
+  ///
+  /// In en, this message translates to:
+  /// **'Next Week'**
+  String get nextWeek;
+
+  /// Label for the 'No Date' option in various selection contexts
+  ///
+  /// In en, this message translates to:
+  /// **'No Date'**
+  String get noDate;
+
+  /// Label for the button to create a new category in the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Category'**
+  String get createNewCategory;
+
+  /// Hint text for the category name input field in the create new category dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Enter category name'**
+  String get categoryNameHint;
+
+  /// Label for the button to create a new category in the create new category dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get create;
+
+  /// Message displayed when there are no tasks in the current view/filter
+  ///
+  /// In en, this message translates to:
+  /// **'No tasks yet'**
+  String get noTasksYet;
+
+  /// Label for the button to set a reminder for a task
+  ///
+  /// In en, this message translates to:
+  /// **'Set Reminder'**
+  String get setReminder;
+
+  /// Label for the reminder setting in the add task sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get reminder;
+
+  /// Label for the daily repeat option in the reminder settings
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats Daily'**
+  String get repeatsDaily;
+
+  /// Label for the time selection button in the reminder settings
+  ///
+  /// In en, this message translates to:
+  /// **'Select Reminder Time'**
+  String get selectReminderTime;
+
+  /// Label for the repeat reminder option in the reminder settings
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat Reminder'**
+  String get repeatReminder;
+
+  /// Label for the button to remove a reminder from a task
+  ///
+  /// In en, this message translates to:
+  /// **'Remove Reminder'**
+  String get removeReminder;
+
+  /// Short label for daily reminders
+  ///
+  /// In en, this message translates to:
+  /// **'D'**
+  String get dailyShort;
+
+  /// Label for the Yesterday tasks view/filter and default date button
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// General error message displayed in various contexts
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred'**
+  String get errorGeneral;
+
+  /// Error message displayed when task creation fails
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating task'**
+  String get errorCreatingTask;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -24,7 +24,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         _logoutUseCase = logoutUseCase,
         _getCachedUserUseCase = getCachedUserUseCase,
         super(AuthInitial()) {
-    //  checkInitialAuthStatus();
+    checkInitialAuthStatus();
   }
 
   Future<void> checkInitialAuthStatus() async {

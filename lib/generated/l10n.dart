@@ -429,6 +429,487 @@ class S {
       args: [],
     );
   }
+
+  /// `Search`
+  String get searchTitle {
+    return Intl.message(
+      'Search',
+      name: 'searchTitle',
+      desc:
+          'Title for the Search screen AppBar and label for the Search tab in BottomNavBar',
+      args: [],
+    );
+  }
+
+  /// `Tasks, Projects, and More`
+  String get searchHint {
+    return Intl.message(
+      'Tasks, Projects, and More',
+      name: 'searchHint',
+      desc: 'Hint text displayed in the search bar',
+      args: [],
+    );
+  }
+
+  /// `Recently Viewed`
+  String get recentlyViewed {
+    return Intl.message(
+      'Recently Viewed',
+      name: 'recentlyViewed',
+      desc: 'Section title for recently accessed views/filters',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'upcoming',
+      desc: 'Label for the Upcoming tasks view/filter and BottomNavBar tab',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
+      desc:
+          'Label for the Today tasks view/filter, BottomNavBar tab, and default date button',
+      args: [],
+    );
+  }
+
+  /// `Inbox`
+  String get inbox {
+    return Intl.message(
+      'Inbox',
+      name: 'inbox',
+      desc: 'Label for the Inbox view/filter and default project',
+      args: [],
+    );
+  }
+
+  /// `Browse`
+  String get browse {
+    return Intl.message(
+      'Browse',
+      name: 'browse',
+      desc: 'Label for the Browse tab in the BottomNavBar',
+      args: [],
+    );
+  }
+
+  /// `Add Task`
+  String get addTaskTooltip {
+    return Intl.message(
+      'Add Task',
+      name: 'addTaskTooltip',
+      desc: 'Tooltip for the Floating Action Button used to add a new task',
+      args: [],
+    );
+  }
+
+  /// `e.g., Discuss thesis tomorrow morning p2`
+  String get addTaskHint {
+    return Intl.message(
+      'e.g., Discuss thesis tomorrow morning p2',
+      name: 'addTaskHint',
+      desc: 'Hint text for the task name input field in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get descriptionHint {
+    return Intl.message(
+      'Description',
+      name: 'descriptionHint',
+      desc:
+          'Hint text for the task description input field in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: 'Label for the date selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Priority`
+  String get priority {
+    return Intl.message(
+      'Priority',
+      name: 'priority',
+      desc: 'Label for the priority selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Reminders`
+  String get reminders {
+    return Intl.message(
+      'Reminders',
+      name: 'reminders',
+      desc: 'Label for the reminders selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `More options`
+  String get moreOptions {
+    return Intl.message(
+      'More options',
+      name: 'moreOptions',
+      desc: 'Tooltip for the \'more options\' button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Please enter a task name`
+  String get taskNameValidationErrorEmpty {
+    return Intl.message(
+      'Please enter a task name',
+      name: 'taskNameValidationErrorEmpty',
+      desc: 'Error message shown when the task name is empty on submission',
+      args: [],
+    );
+  }
+
+  /// `Add Task`
+  String get submitTask {
+    return Intl.message(
+      'Add Task',
+      name: 'submitTask',
+      desc:
+          'Action label/,tooltip for submitting the new task (distinct from FAB tooltip)',
+      args: [],
+    );
+  }
+
+  /// `Priority 1`
+  String get priority1 {
+    return Intl.message(
+      'Priority 1',
+      name: 'priority1',
+      desc: 'Label for priority level 1',
+      args: [],
+    );
+  }
+
+  /// `Priority 2`
+  String get priority2 {
+    return Intl.message(
+      'Priority 2',
+      name: 'priority2',
+      desc: 'Label for priority level 2',
+      args: [],
+    );
+  }
+
+  /// `Priority 3`
+  String get priority3 {
+    return Intl.message(
+      'Priority 3',
+      name: 'priority3',
+      desc: 'Label for priority level 3',
+      args: [],
+    );
+  }
+
+  /// `Priority 4`
+  String get priority4 {
+    return Intl.message(
+      'Priority 4',
+      name: 'priority4',
+      desc: 'Label for priority level 4 (often default)',
+      args: [],
+    );
+  }
+
+  /// `No tasks found`
+  String get noTaskFound {
+    return Intl.message(
+      'No tasks found',
+      name: 'noTaskFound',
+      desc:
+          'Message displayed when no tasks are found in a specific view/filter',
+      args: [],
+    );
+  }
+
+  /// `Tomorrow`
+  String get tomorrow {
+    return Intl.message(
+      'Tomorrow',
+      name: 'tomorrow',
+      desc: 'Label for the Tomorrow tasks view/filter and default date button',
+      args: [],
+    );
+  }
+
+  /// `Select Time`
+  String get selectTime {
+    return Intl.message(
+      'Select Time',
+      name: 'selectTime',
+      desc: 'Label for the time selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: 'Label for the OK button in dialogs and confirmation messages',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: 'Label for the Cancel button in dialogs and confirmation messages',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get selectDate {
+    return Intl.message(
+      'Select Date',
+      name: 'selectDate',
+      desc: 'Label for the date selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Customize Priorities`
+  String get customizePriorities {
+    return Intl.message(
+      'Customize Priorities',
+      name: 'customizePriorities',
+      desc:
+          'Label for the button to customize task priorities in the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Manage Categories`
+  String get manageCategories {
+    return Intl.message(
+      'Manage Categories',
+      name: 'manageCategories',
+      desc:
+          'Label for the button to manage task categories in the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message(
+      'Time',
+      name: 'time',
+      desc: 'Label for the time selection button in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `None`
+  String get none {
+    return Intl.message(
+      'None',
+      name: 'none',
+      desc: 'Label for the \'None\' option in various selection contexts',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: 'Label for the \'Done\' option in various selection contexts',
+      args: [],
+    );
+  }
+
+  /// `Next Week`
+  String get nextWeek {
+    return Intl.message(
+      'Next Week',
+      name: 'nextWeek',
+      desc: 'Label for the \'Next Week\' option in various selection contexts',
+      args: [],
+    );
+  }
+
+  /// `No Date`
+  String get noDate {
+    return Intl.message(
+      'No Date',
+      name: 'noDate',
+      desc: 'Label for the \'No Date\' option in various selection contexts',
+      args: [],
+    );
+  }
+
+  /// `Create New Category`
+  String get createNewCategory {
+    return Intl.message(
+      'Create New Category',
+      name: 'createNewCategory',
+      desc:
+          'Label for the button to create a new category in the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Enter category name`
+  String get categoryNameHint {
+    return Intl.message(
+      'Enter category name',
+      name: 'categoryNameHint',
+      desc:
+          'Hint text for the category name input field in the create new category dialog',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get create {
+    return Intl.message(
+      'Create',
+      name: 'create',
+      desc:
+          'Label for the button to create a new category in the create new category dialog',
+      args: [],
+    );
+  }
+
+  /// `No tasks yet`
+  String get noTasksYet {
+    return Intl.message(
+      'No tasks yet',
+      name: 'noTasksYet',
+      desc:
+          'Message displayed when there are no tasks in the current view/filter',
+      args: [],
+    );
+  }
+
+  /// `Set Reminder`
+  String get setReminder {
+    return Intl.message(
+      'Set Reminder',
+      name: 'setReminder',
+      desc: 'Label for the button to set a reminder for a task',
+      args: [],
+    );
+  }
+
+  /// `Reminder`
+  String get reminder {
+    return Intl.message(
+      'Reminder',
+      name: 'reminder',
+      desc: 'Label for the reminder setting in the add task sheet',
+      args: [],
+    );
+  }
+
+  /// `Repeats Daily`
+  String get repeatsDaily {
+    return Intl.message(
+      'Repeats Daily',
+      name: 'repeatsDaily',
+      desc: 'Label for the daily repeat option in the reminder settings',
+      args: [],
+    );
+  }
+
+  /// `Select Reminder Time`
+  String get selectReminderTime {
+    return Intl.message(
+      'Select Reminder Time',
+      name: 'selectReminderTime',
+      desc: 'Label for the time selection button in the reminder settings',
+      args: [],
+    );
+  }
+
+  /// `Repeat Reminder`
+  String get repeatReminder {
+    return Intl.message(
+      'Repeat Reminder',
+      name: 'repeatReminder',
+      desc: 'Label for the repeat reminder option in the reminder settings',
+      args: [],
+    );
+  }
+
+  /// `Remove Reminder`
+  String get removeReminder {
+    return Intl.message(
+      'Remove Reminder',
+      name: 'removeReminder',
+      desc: 'Label for the button to remove a reminder from a task',
+      args: [],
+    );
+  }
+
+  /// `D`
+  String get dailyShort {
+    return Intl.message(
+      'D',
+      name: 'dailyShort',
+      desc: 'Short label for daily reminders',
+      args: [],
+    );
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message(
+      'Yesterday',
+      name: 'yesterday',
+      desc: 'Label for the Yesterday tasks view/filter and default date button',
+      args: [],
+    );
+  }
+
+  /// `An error occurred`
+  String get errorGeneral {
+    return Intl.message(
+      'An error occurred',
+      name: 'errorGeneral',
+      desc: 'General error message displayed in various contexts',
+      args: [],
+    );
+  }
+
+  /// `Error creating task`
+  String get errorCreatingTask {
+    return Intl.message(
+      'Error creating task',
+      name: 'errorCreatingTask',
+      desc: 'Error message displayed when task creation fails',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

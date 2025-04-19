@@ -111,7 +111,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get enterFullNameHint => 'Nhập họ tên của bạn';
 
   @override
-  String get passwordValidationErrorLength => 'Mật khẩu phải có ít nhất 6 ký tự';
+  String get passwordValidationErrorLength => 'Mật khẩu phải có ít nhất 8 ký tự';
 
   @override
   String get confirmPassword => 'Xác nhận mật khẩu';
@@ -132,14 +132,155 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAccount => 'Đã có tài khoản? ';
 
   @override
-  String get usernameValidationErrorLength => 'Tên đăng nhập có độ dài không hợp lệ (<50)';
+  String get usernameValidationErrorLength => 'Tên đăng nhập có độ dài không hợp lệ (tối đa 50)';
 
   @override
-  String get usernameValidationErrorChars => 'Username contains invalid characters (a-z, A-Z) and numbers (0-9) and _';
+  String get usernameValidationErrorChars => 'Tên đăng nhập chứa ký tự không hợp lệ (chỉ cho phép a-z, A-Z, 0-9 và _)';
 
   @override
-  String get fullNameValidationErrorMinWords => 'Full name must contain at least 2 words';
+  String get fullNameValidationErrorMinWords => 'Họ tên phải chứa ít nhất 2 từ';
 
   @override
-  String get passwordValidationErrorComplexity => 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
+  String get passwordValidationErrorComplexity => 'Mật khẩu phải chứa ít nhất một chữ hoa, một chữ thường, một số và một ký tự đặc biệt';
+
+  @override
+  String get searchTitle => 'Tìm kiếm';
+
+  @override
+  String get searchHint => 'Nhiệm vụ, Dự án, và nhiều hơn nữa';
+
+  @override
+  String get recentlyViewed => 'Đã xem gần đây';
+
+  @override
+  String get upcoming => 'Sắp tới';
+
+  @override
+  String get today => 'Hôm nay';
+
+  @override
+  String get inbox => 'Hộp thư đến';
+
+  @override
+  String get browse => 'Duyệt';
+
+  @override
+  String get addTaskTooltip => 'Thêm Nhiệm vụ';
+
+  @override
+  String get addTaskHint => 'vd: Thảo luận luận văn sáng mai p2';
+
+  @override
+  String get descriptionHint => 'Mô tả';
+
+  @override
+  String get date => 'Ngày';
+
+  @override
+  String get priority => 'Ưu tiên';
+
+  @override
+  String get reminders => 'Nhắc nhở';
+
+  @override
+  String get moreOptions => 'Tùy chọn khác';
+
+  @override
+  String get taskNameValidationErrorEmpty => 'Vui lòng nhập tên công việc';
+
+  @override
+  String get submitTask => 'Thêm công việc';
+
+  @override
+  String get priority1 => 'Ưu tiên 1';
+
+  @override
+  String get priority2 => 'Ưu tiên 2';
+
+  @override
+  String get priority3 => 'Ưu tiên 3';
+
+  @override
+  String get priority4 => 'Ưu tiên 4';
+
+  @override
+  String get noTaskFound => 'Không tìm thấy công việc';
+
+  @override
+  String get tomorrow => 'Ngày mai';
+
+  @override
+  String get selectTime => 'Select Time';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get selectDate => 'Chọn ngày';
+
+  @override
+  String get customizePriorities => 'Tùy chỉnh ưu tiên';
+
+  @override
+  String get manageCategories => 'Quản lý danh mục';
+
+  @override
+  String get time => 'Thời gian';
+
+  @override
+  String get none => 'Không';
+
+  @override
+  String get done => 'Hoàn thành';
+
+  @override
+  String get nextWeek => 'Tuần tới';
+
+  @override
+  String get noDate => 'Không có ngày';
+
+  @override
+  String get createNewCategory => 'Tạo danh mục mới';
+
+  @override
+  String get categoryNameHint => 'Nhập tên danh mục';
+
+  @override
+  String get create => 'Tạo';
+
+  @override
+  String get noTasksYet => 'Chưa có công việc nào';
+
+  @override
+  String get setReminder => 'Set Reminder';
+
+  @override
+  String get reminder => 'Reminder';
+
+  @override
+  String get repeatsDaily => 'Repeats Daily';
+
+  @override
+  String get selectReminderTime => 'Select Reminder Time';
+
+  @override
+  String get repeatReminder => 'Repeat Reminder';
+
+  @override
+  String get removeReminder => 'Remove Reminder';
+
+  @override
+  String get dailyShort => 'D';
+
+  @override
+  String get yesterday => 'Hôm qua';
+
+  @override
+  String get errorGeneral => 'Có lỗi xảy ra';
+
+  @override
+  String get errorCreatingTask => 'Có lỗi xảy ra khi tạo nhiệm vụ';
 }
