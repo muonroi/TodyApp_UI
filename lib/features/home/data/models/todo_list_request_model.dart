@@ -1,6 +1,7 @@
 import 'package:tudy/features/home/data/enums/priority_level.dart';
 
 class TodoListRequestModel {
+  String? entityId;
   final String name;
   bool isDone;
   DateTime? dueDate;
@@ -12,7 +13,8 @@ class TodoListRequestModel {
   String? category;
 
   TodoListRequestModel(
-      {required this.name,
+      {this.entityId,
+      required this.name,
       this.isDone = false,
       this.dueDate,
       this.priority,
@@ -23,6 +25,7 @@ class TodoListRequestModel {
       this.category});
   Map<String, dynamic> toJson() {
     return {
+      'entityId': entityId,
       'name': name,
       'isDone': isDone,
       'dueDate': dueDate?.toIso8601String(),

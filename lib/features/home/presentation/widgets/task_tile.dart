@@ -68,7 +68,6 @@ class TaskTile extends ConsumerWidget {
             allCategories.firstWhere((cat) => cat.id == task.categoryId);
       } catch (e) {
         taskCategory = null;
-        debugPrint("Category not found for ID: ${task.categoryId}");
       }
     }
 
@@ -100,7 +99,9 @@ class TaskTile extends ConsumerWidget {
         : '';
 
     final TimeOfDay? reminderTime = task.parsedReminderTime;
+
     String formattedReminderTime = "";
+
     if (reminderTime != null) {
       formattedReminderTime = MaterialLocalizations.of(context)
           .formatTimeOfDay(reminderTime, alwaysUse24HourFormat: true);

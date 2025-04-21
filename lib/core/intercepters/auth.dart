@@ -44,11 +44,19 @@ class AuthInterceptor extends Interceptor {
           handler.next(err);
           return;
         }
-
-        final Response refreshResponse = await dio.post(
-          "/refresh-token",
-          data: {"refreshToken": refreshToken},
-        );
+        final accessToken = tokenStorage.getAccessToken();
+        if (accessToken == null || accessToken.isEmpty) {
+          handler.next(err);
+          return;
+        }
+        final refreshResponse = await dio.post("/auth/refresh-token",
+            data: {},
+            options: Options(
+              headers: {
+                'Authorization': accessToken,
+                'Content-Type': 'application/json',
+              },
+            ));
 
         if (refreshResponse.statusCode == 200 &&
             refreshResponse.data != null &&

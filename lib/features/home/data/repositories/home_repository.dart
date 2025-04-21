@@ -6,6 +6,7 @@ import 'package:tudy/features/home/data/models/todo_list_request_model.dart';
 abstract class HomeRepository {
   Future<MPagingResponse<TaskModel>?> getTasks(int pageIndex);
   Future<bool?> createTaskList(TodoListRequestModel taskModel);
+  Future<bool?> updateTaskList(TodoListRequestModel taskModel);
 }
 
 class HomeRepositoryImpl extends HomeRepository {
@@ -33,6 +34,19 @@ class HomeRepositoryImpl extends HomeRepository {
       },
       fromJson: (json) => TaskModel.fromJson(json),
     );
+    return response;
+  }
+
+  @override
+  Future<bool?> updateTaskList(TodoListRequestModel taskModel) async {
+    final response = await baseService.putData<bool>(
+      '/todolist/update',
+      taskModel.toJson(),
+      fromJson: (dynamic jsonValue) => jsonValue as bool,
+    );
+    if (response == null) {
+      return null;
+    }
     return response;
   }
 }

@@ -109,17 +109,55 @@ class TaskListNotifier extends StateNotifier<TaskListState> {
     }
   }
 
-  void toggleDone(String taskId) {
-    if (state is TaskListData) {
-      final currentTasks = (state as TaskListData).tasks;
-      final updatedTasks = currentTasks.map((task) {
-        if (task.id == taskId) {
-          return task.copyWith(isDone: !task.isDone);
-        }
-        return task;
-      }).toList();
+  Future<void> toggleDone(String taskId) async {
+    if (state is! TaskListData) return;
 
-      state = TaskListData(updatedTasks);
+    final currentData = state as TaskListData;
+    final currentTasks = currentData.tasks;
+
+    final taskIndex = currentTasks.indexWhere((task) => task.id == taskId);
+    if (taskIndex == -1) return;
+
+    final taskToUpdate = currentTasks[taskIndex];
+    final newIsDoneStatus = !taskToUpdate.isDone;
+
+    taskToUpdate.isDone = newIsDoneStatus;
+
+    String? reminderTimeStringForBackend;
+
+    if (taskToUpdate.parsedReminderTime != null) {
+      final int? hour = taskToUpdate.parsedReminderTime?.hour;
+      final int? minute = taskToUpdate.parsedReminderTime?.minute;
+
+      final String hourPadded = hour.toString().padLeft(2, '0');
+      final String minutePadded = minute.toString().padLeft(2, '0');
+
+      reminderTimeStringForBackend = "0.$hourPadded:$minutePadded:00";
+    }
+
+    final request = TodoListRequestModel(
+        entityId: taskToUpdate.id,
+        name: taskToUpdate.name,
+        isDone: newIsDoneStatus,
+        dueDate: taskToUpdate.dueDate,
+        priority: taskToUpdate.priority,
+        hasReminder: taskToUpdate.hasReminder,
+        reminderTime: reminderTimeStringForBackend,
+        reminderRepeats: taskToUpdate.reminderRepeats,
+        description: taskToUpdate.description,
+        category: taskToUpdate.categoryId);
+
+    final bool? success = await _homeRepository.updateTaskList(request);
+
+    if (success != null && success && mounted) {
+      final updatedTask = taskToUpdate.copyWith(
+        isDone: newIsDoneStatus,
+      );
+
+      final updatedTasks = List<TaskModel>.from(currentTasks);
+      updatedTasks[taskIndex] = updatedTask;
+
+      state = currentData.copyWith(tasks: updatedTasks);
     }
   }
 }
