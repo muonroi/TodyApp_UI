@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tudy/features/home/presentation/pages/upcommong_page.dart';
 import 'package:tudy/features/home/presentation/widgets/quick_add_bar.dart';
 import 'package:tudy/features/home/today_screen.dart';
 import 'package:tudy/l10n/app_localizations.dart';
@@ -16,6 +17,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const TodayScreen(),
+    const UpcomingScreen(),
   ];
 
   List<String> _getAppBarTitles(AppLocalizations l10n) {
