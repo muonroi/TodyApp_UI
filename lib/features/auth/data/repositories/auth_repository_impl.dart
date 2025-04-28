@@ -60,14 +60,25 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<bool> register(String username, String password, String emailAddress,
-      String name, String surname, String phoneNumber) async {
+  Future<bool> register(
+      String username,
+      String password,
+      String emailAddress,
+      String name,
+      String surname,
+      String phoneNumber,
+      String externalLoginProvider,
+      String externalLoginToken,
+      bool isUseThirdPartyLogin) async {
     final loginResponseModel = await remoteDataSource.register(RegisterModel(
       username: username,
       password: password,
       email: emailAddress,
       name: name,
       surname: surname,
+      externalLoginProvider: externalLoginProvider,
+      externalLoginToken: externalLoginToken,
+      isUseThirdPartyLogin: isUseThirdPartyLogin,
       phoneNumber: phoneNumber,
     ));
     if (loginResponseModel == null) {

@@ -8,11 +8,12 @@ final authNotifierProvider =
   final logoutUseCase = ref.watch(logoutUseCaseProvider);
   final refreshTokenUseCase = ref.watch(refreshTokenUseCaseProvider);
   final getCachedUserUseCase = ref.watch(getCachedUserUseCaseProvider);
-
+  final socialLoginUseCase = ref.watch(socialLoginUseCaseProvider);
   return AuthNotifier(
     loginUseCase: loginUseCase,
     logoutUseCase: logoutUseCase,
     refreshTokenUseCase: refreshTokenUseCase,
     getCachedUserUseCase: getCachedUserUseCase,
+    socialLoginUseCase: socialLoginUseCase,
   );
 });

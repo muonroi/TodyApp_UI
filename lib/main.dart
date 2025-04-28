@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tudy/config/app_colors.dart';
 import 'package:tudy/config/router.dart';
 import 'package:tudy/core/storages/hive_storage.dart';
 import 'package:tudy/core/widgets/error_dialog_widget.dart';
+import 'package:tudy/features/home/presentation/providers/locale_provider.dart';
+import 'package:tudy/features/home/presentation/providers/theme_provider.dart';
 import 'package:tudy/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await HiveStorage.init();
+  await SharedPreferences.getInstance();
   runApp(const ProviderScope(child: TudyApp()));
 }
 
@@ -18,8 +22,9 @@ class TudyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final currentLocale = ref.watch(localeProvider);
+    final currentThemeMode = ref.watch(themeProvider);
     final router = ref.watch(goRouterProvider);
-
     final colorScheme = ColorScheme.fromSeed(
       seedColor: AppColors.primarySeed,
       error: AppColors.error,
@@ -107,6 +112,7 @@ class TudyApp extends ConsumerWidget {
       onGenerateTitle: (context) {
         return AppLocalizations.of(context).tudyAppTitle;
       },
+      themeMode: currentThemeMode,
       theme: theme,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -114,6 +120,8 @@ class TudyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      debugShowCheckedModeBanner: false,
+      locale: currentLocale,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: router,
       builder: (context, child) {

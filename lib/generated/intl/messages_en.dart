@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
     "addTaskHint": MessageLookupByLibrary.simpleMessage(
       "e.g., Discuss thesis tomorrow morning p2",
     ),
@@ -30,6 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Already have an account? ",
     ),
     "appleLogin": MessageLookupByLibrary.simpleMessage("Apple"),
+    "appleSignInError": MessageLookupByLibrary.simpleMessage(
+      "Error signing in with Apple",
+    ),
+    "appleSignInNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Apple is not available on this device",
+    ),
     "browse": MessageLookupByLibrary.simpleMessage("Browse"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "categoryNameHint": MessageLookupByLibrary.simpleMessage(
@@ -49,6 +56,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dailyShort": MessageLookupByLibrary.simpleMessage("D"),
     "date": MessageLookupByLibrary.simpleMessage("Date"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
+    "deleteAccountConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete your account? This action cannot be undone.",
+    ),
+    "deleteAccountRequestSentPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Account deletion request sent. Please check your email for confirmation.",
+    ),
     "descriptionHint": MessageLookupByLibrary.simpleMessage("Description"),
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -92,12 +107,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "An error occurred",
     ),
     "googleLogin": MessageLookupByLibrary.simpleMessage("Google"),
+    "googleSignInError": MessageLookupByLibrary.simpleMessage(
+      "Error signing in with Google",
+    ),
     "inbox": MessageLookupByLibrary.simpleMessage("Inbox"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginButton": MessageLookupByLibrary.simpleMessage("LOGIN"),
+    "loginFailedError": MessageLookupByLibrary.simpleMessage(
+      "Login failed. Please check your credentials.",
+    ),
+    "loginGeneralError": MessageLookupByLibrary.simpleMessage(
+      "An unexpected error occurred during login",
+    ),
     "loginSuccessMessage": MessageLookupByLibrary.simpleMessage(
       "Login successful! Welcome back!",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
+    "logoutError": MessageLookupByLibrary.simpleMessage("Failed to log out"),
     "manageCategories": MessageLookupByLibrary.simpleMessage(
       "Manage Categories",
     ),
@@ -109,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noDate": MessageLookupByLibrary.simpleMessage("No Date"),
     "noTaskFound": MessageLookupByLibrary.simpleMessage("No tasks found"),
     "noTasksYet": MessageLookupByLibrary.simpleMessage("No tasks yet"),
+    "noUpcomingTasks": MessageLookupByLibrary.simpleMessage(
+      "No upcoming tasks",
+    ),
     "none": MessageLookupByLibrary.simpleMessage("None"),
     "notAvailable": MessageLookupByLibrary.simpleMessage("N/A"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
@@ -162,6 +195,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "setReminder": MessageLookupByLibrary.simpleMessage("Set Reminder"),
+    "socialLoginFailedError": MessageLookupByLibrary.simpleMessage(
+      "Social login failed.",
+    ),
+    "socialLoginGeneralError": MessageLookupByLibrary.simpleMessage(
+      "An unexpected error occurred during social login",
+    ),
     "submitTask": MessageLookupByLibrary.simpleMessage("Add Task"),
     "taskNameValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter a task name",

@@ -5,8 +5,6 @@ import 'package:tudy/core/models/mresponse.dart';
 import 'package:tudy/features/home/data/models/task_model.dart';
 import 'package:tudy/features/home/data/models/todo_list_request_model.dart';
 import 'package:tudy/features/home/data/repositories/home_repository.dart';
-import 'package:uuid/uuid.dart';
-
 part 'task_list_state.dart';
 
 final homeRepositoryProvider = Provider<HomeRepository>((ref) {
@@ -24,27 +22,8 @@ class TaskListNotifier extends StateNotifier<TaskListState> {
       final bool? success = await _homeRepository.createTaskList(request);
 
       if (success == true) {
-        final newTaskModel = TaskModel(
-          id: const Uuid().v4(),
-          name: request.name,
-          isDone: false,
-          priority: request.priority,
-          dueDate: request.dueDate,
-          description: request.description,
-          hasReminder: request.reminderTime != null,
-          reminderTime: request.reminderTime,
-          reminderRepeats: request.reminderRepeats,
-        );
+        await loadTasks(1);
 
-        if (state is TaskListData) {
-          final currentState = state as TaskListData;
-
-          state = currentState.copyWith(
-            tasks: [...currentState.tasks, newTaskModel],
-          );
-        } else {
-          state = TaskListData([newTaskModel]);
-        }
         return true;
       } else {
         return false;

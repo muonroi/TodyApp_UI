@@ -1,12 +1,15 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+import java.io.FileInputStream
+import java.util.Properties
+import java.io.File 
+
 android {
-    namespace = "com.example.tudy"
+    namespace = "com.muonroi.tudy"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "29.0.13113456"
 
@@ -20,21 +23,51 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.tudy"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "com.muonroi.tudy"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        create("release") {
+            val properties = Properties()
+            val propertiesFile = File(rootDir, "key.properties")
+            if (propertiesFile.exists()) {
+                properties.load(FileInputStream(propertiesFile))
+
+                storeFile = File(properties.getProperty("storeFile") as String)
+                storePassword = properties.getProperty("storePassword") as String
+                keyAlias = properties.getProperty("keyAlias") as String
+                keyPassword = properties.getProperty("keyPassword") as String
+
+            } else {
+                 val envStorePassword = System.getenv("KEYSTORE_PASSWORD") ?: ""
+                 val envKeyAlias = System.getenv("KEY_ALIAS") ?: ""
+                 val envKeyPassword = System.getenv("KEY_PASSWORD") ?: ""
+                 val envStoreFilePath = System.getenv("STORE_FILE") ?: "" 
+                 if (envStorePassword.isEmpty() || envKeyAlias.isEmpty() || envKeyPassword.isEmpty() || envStoreFilePath.isEmpty()) {
+                      throw GradleException("""
+                      ${propertiesFile.absolutePath} file not found and environment variables are not set. 
+                      """.trimIndent())
+                 } else {
+                      storeFile = File(envStoreFilePath) 
+                      storePassword = envStorePassword
+                      keyAlias = envKeyAlias
+                      keyPassword = envKeyPassword
+                 }
+            }
+        }
+    }
+
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }

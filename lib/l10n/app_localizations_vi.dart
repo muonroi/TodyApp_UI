@@ -283,4 +283,55 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get errorCreatingTask => 'Có lỗi xảy ra khi tạo nhiệm vụ';
+
+  @override
+  String get addTask => 'Thêm nhiệm vụ';
+
+  @override
+  String get noUpcomingTasks => 'Không có nhiệm vụ nào sắp tới';
+
+  @override
+  String get language => 'Ngôn ngữ';
+
+  @override
+  String get deleteAccount => 'Xóa tài khoản';
+
+  @override
+  String get deleteAccountConfirmation => 'Bạn có chắc chắn muốn xóa tài khoản của mình không? Hành động này không thể hoàn tác.';
+
+  @override
+  String get delete => 'Xóa';
+
+  @override
+  String get deleteAccountRequestSentPlaceholder => 'Yêu cầu xóa tài khoản đã được gửi đến email của bạn.';
+
+  @override
+  String get logout => 'Đăng xuất';
+
+  @override
+  String get logoutConfirmation => 'Bạn có chắc chắn muốn đăng xuất không?';
+
+  @override
+  String get loginFailedError => 'Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.';
+
+  @override
+  String get loginGeneralError => 'Đã xảy ra lỗi không mong muốn khi đăng nhập';
+
+  @override
+  String get googleSignInError => 'Lỗi khi đăng nhập bằng Google';
+
+  @override
+  String get appleSignInError => 'Lỗi khi đăng nhập bằng Apple';
+
+  @override
+  String get appleSignInNotAvailable => 'Đăng nhập bằng Apple không khả dụng trên thiết bị này';
+
+  @override
+  String get socialLoginFailedError => 'Đăng nhập bằng social thất bại.';
+
+  @override
+  String get socialLoginGeneralError => 'Đã xảy ra lỗi không mong muốn khi đăng nhập bằng social';
+
+  @override
+  String get logoutError => 'Đăng xuất thất bại';
 }

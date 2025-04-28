@@ -91,5 +91,22 @@
     "dailyShort": "D",
     "yesterday": "Hôm qua",
     "errorGeneral": "Có lỗi xảy ra",
-    "errorCreatingTask": "Có lỗi xảy ra khi tạo nhiệm vụ"
+    "errorCreatingTask": "Có lỗi xảy ra khi tạo nhiệm vụ",
+    "addTask": "Thêm nhiệm vụ",
+    "noUpcomingTasks": "Không có nhiệm vụ nào sắp tới",
+    "language": "Ngôn ngữ",
+    "deleteAccount": "Xóa tài khoản",
+    "deleteAccountConfirmation": "Bạn có chắc chắn muốn xóa tài khoản của mình không? Hành động này không thể hoàn tác.",
+    "delete": "Xóa",
+    "deleteAccountRequestSentPlaceholder": "Yêu cầu xóa tài khoản đã được gửi đến email của bạn.",
+    "logout": "Đăng xuất",
+    "loginFailedError": "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.",
+    "loginGeneralError": "Đã xảy ra lỗi không mong muốn khi đăng nhập",
+    "logoutConfirmation": "Bạn có chắc chắn muốn đăng xuất không?",
+    "googleSignInError": "Lỗi khi đăng nhập bằng Google",
+    "appleSignInError": "Lỗi khi đăng nhập bằng Apple",
+    "appleSignInNotAvailable": "Đăng nhập bằng Apple không khả dụng trên thiết bị này",
+    "socialLoginFailedError": "Đăng nhập bằng social thất bại.",
+    "socialLoginGeneralError": "Đã xảy ra lỗi không mong muốn khi đăng nhập bằng social",
+    "logoutError": "Đăng xuất thất bại"
 }

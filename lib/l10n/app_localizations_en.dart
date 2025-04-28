@@ -283,4 +283,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorCreatingTask => 'Error creating task';
+
+  @override
+  String get addTask => 'Add Task';
+
+  @override
+  String get noUpcomingTasks => 'No upcoming tasks';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get deleteAccount => 'Delete Account';
+
+  @override
+  String get deleteAccountConfirmation => 'Are you sure you want to delete your account? This action cannot be undone.';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get deleteAccountRequestSentPlaceholder => 'Account deletion request sent. Please check your email for confirmation.';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get logoutConfirmation => 'Are you sure you want to log out?';
+
+  @override
+  String get loginFailedError => 'Login failed. Please check your credentials.';
+
+  @override
+  String get loginGeneralError => 'An unexpected error occurred during login';
+
+  @override
+  String get googleSignInError => 'Error signing in with Google';
+
+  @override
+  String get appleSignInError => 'Error signing in with Apple';
+
+  @override
+  String get appleSignInNotAvailable => 'Sign in with Apple is not available on this device';
+
+  @override
+  String get socialLoginFailedError => 'Social login failed.';
+
+  @override
+  String get socialLoginGeneralError => 'An unexpected error occurred during social login';
+
+  @override
+  String get logoutError => 'Failed to log out';
 }

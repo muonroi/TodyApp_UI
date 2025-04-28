@@ -646,6 +646,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error creating task'**
   String get errorCreatingTask;
+
+  /// Label for the button to add a new task
+  ///
+  /// In en, this message translates to:
+  /// **'Add Task'**
+  String get addTask;
+
+  /// Message displayed when there are no upcoming tasks
+  ///
+  /// In en, this message translates to:
+  /// **'No upcoming tasks'**
+  String get noUpcomingTasks;
+
+  /// Label for the language selection option in the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// Label for the button to delete the user account in the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccount;
+
+  /// Confirmation message displayed when the user attempts to delete their account
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your account? This action cannot be undone.'**
+  String get deleteAccountConfirmation;
+
+  /// Label for the button to delete a task or account
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// Message displayed when the account deletion request is sent
+  ///
+  /// In en, this message translates to:
+  /// **'Account deletion request sent. Please check your email for confirmation.'**
+  String get deleteAccountRequestSentPlaceholder;
+
+  /// Label for the button to log out of the application
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// Confirmation message displayed when the user attempts to log out
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out?'**
+  String get logoutConfirmation;
+
+  /// Error message displayed when login fails
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed. Please check your credentials.'**
+  String get loginFailedError;
+
+  /// General error message displayed during login
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred during login'**
+  String get loginGeneralError;
+
+  /// Error message displayed when Google sign-in fails
+  ///
+  /// In en, this message translates to:
+  /// **'Error signing in with Google'**
+  String get googleSignInError;
+
+  /// Error message displayed when Apple sign-in fails
+  ///
+  /// In en, this message translates to:
+  /// **'Error signing in with Apple'**
+  String get appleSignInError;
+
+  /// Error message displayed when Apple sign-in is not available
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Apple is not available on this device'**
+  String get appleSignInNotAvailable;
+
+  /// Error message displayed when social login fails
+  ///
+  /// In en, this message translates to:
+  /// **'Social login failed.'**
+  String get socialLoginFailedError;
+
+  /// General error message displayed during social login
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred during social login'**
+  String get socialLoginGeneralError;
+
+  /// Error message displayed when logout fails
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to log out'**
+  String get logoutError;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addTask": MessageLookupByLibrary.simpleMessage("Thêm nhiệm vụ"),
     "addTaskHint": MessageLookupByLibrary.simpleMessage(
       "vd: Thảo luận luận văn sáng mai p2",
     ),
@@ -30,6 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đã có tài khoản? ",
     ),
     "appleLogin": MessageLookupByLibrary.simpleMessage("Apple"),
+    "appleSignInError": MessageLookupByLibrary.simpleMessage(
+      "Lỗi khi đăng nhập bằng Apple",
+    ),
+    "appleSignInNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "Đăng nhập bằng Apple không khả dụng trên thiết bị này",
+    ),
     "browse": MessageLookupByLibrary.simpleMessage("Duyệt"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "categoryNameHint": MessageLookupByLibrary.simpleMessage(
@@ -51,6 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dailyShort": MessageLookupByLibrary.simpleMessage("D"),
     "date": MessageLookupByLibrary.simpleMessage("Ngày"),
+    "delete": MessageLookupByLibrary.simpleMessage("Xóa"),
+    "deleteAccount": MessageLookupByLibrary.simpleMessage("Xóa tài khoản"),
+    "deleteAccountConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Bạn có chắc chắn muốn xóa tài khoản của mình không? Hành động này không thể hoàn tác.",
+    ),
+    "deleteAccountRequestSentPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Yêu cầu xóa tài khoản đã được gửi đến email của bạn.",
+    ),
     "descriptionHint": MessageLookupByLibrary.simpleMessage("Mô tả"),
     "done": MessageLookupByLibrary.simpleMessage("Hoàn thành"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -96,12 +111,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "Có lỗi xảy ra",
     ),
     "googleLogin": MessageLookupByLibrary.simpleMessage("Google"),
+    "googleSignInError": MessageLookupByLibrary.simpleMessage(
+      "Lỗi khi đăng nhập bằng Google",
+    ),
     "inbox": MessageLookupByLibrary.simpleMessage("Hộp thư đến"),
+    "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
     "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
     "loginButton": MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP"),
+    "loginFailedError": MessageLookupByLibrary.simpleMessage(
+      "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.",
+    ),
+    "loginGeneralError": MessageLookupByLibrary.simpleMessage(
+      "Đã xảy ra lỗi không mong muốn khi đăng nhập",
+    ),
     "loginSuccessMessage": MessageLookupByLibrary.simpleMessage(
       "Đăng nhập thành công! Chào mừng trở lại!",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
+    "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Bạn có chắc chắn muốn đăng xuất không?",
+    ),
+    "logoutError": MessageLookupByLibrary.simpleMessage("Đăng xuất thất bại"),
     "manageCategories": MessageLookupByLibrary.simpleMessage(
       "Quản lý danh mục",
     ),
@@ -113,6 +143,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Không tìm thấy công việc",
     ),
     "noTasksYet": MessageLookupByLibrary.simpleMessage("Chưa có công việc nào"),
+    "noUpcomingTasks": MessageLookupByLibrary.simpleMessage(
+      "Không có nhiệm vụ nào sắp tới",
+    ),
     "none": MessageLookupByLibrary.simpleMessage("Không"),
     "notAvailable": MessageLookupByLibrary.simpleMessage("Không có"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
@@ -166,6 +199,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "setReminder": MessageLookupByLibrary.simpleMessage("Set Reminder"),
+    "socialLoginFailedError": MessageLookupByLibrary.simpleMessage(
+      "Đăng nhập bằng social thất bại.",
+    ),
+    "socialLoginGeneralError": MessageLookupByLibrary.simpleMessage(
+      "Đã xảy ra lỗi không mong muốn khi đăng nhập bằng social",
+    ),
     "submitTask": MessageLookupByLibrary.simpleMessage("Thêm công việc"),
     "taskNameValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
       "Vui lòng nhập tên công việc",

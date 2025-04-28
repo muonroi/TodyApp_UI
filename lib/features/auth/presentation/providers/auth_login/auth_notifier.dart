@@ -5,6 +5,7 @@ import 'package:tudy/features/auth/domain/usecases/get_cached_user_usecase.dart'
 import 'package:tudy/features/auth/domain/usecases/login_usecase.dart';
 import 'package:tudy/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:tudy/features/auth/domain/usecases/refresh_token_usecase.dart';
+import 'package:tudy/features/auth/domain/usecases/social_login_usecase.dart';
 part 'auth_state.dart';
 part '../auth_register/auth_register_state.dart';
 
@@ -13,16 +14,21 @@ class AuthNotifier extends StateNotifier<AuthState> {
   final RefreshTokenUseCase _refreshTokenUseCase;
   final LogoutUseCase _logoutUseCase;
   final GetCachedUserUseCase _getCachedUserUseCase;
+  final SocialLoginUseCase
+      _socialLoginUseCase; // ✨ Add the new use case dependency ✨
 
   AuthNotifier({
     required LoginUseCase loginUseCase,
     required RefreshTokenUseCase refreshTokenUseCase,
     required LogoutUseCase logoutUseCase,
     required GetCachedUserUseCase getCachedUserUseCase,
+    required SocialLoginUseCase socialLoginUseCase,
   })  : _loginUseCase = loginUseCase,
         _refreshTokenUseCase = refreshTokenUseCase,
         _logoutUseCase = logoutUseCase,
         _getCachedUserUseCase = getCachedUserUseCase,
+        _socialLoginUseCase = socialLoginUseCase, // ✨ Assign the new use case ✨
+
         super(AuthInitial()) {
     //checkInitialAuthStatus();
   }
@@ -57,6 +63,27 @@ class AuthNotifier extends StateNotifier<AuthState> {
       }
     } catch (e) {
       state = AuthUnauthenticated();
+    }
+  }
+
+  Future<void> loginWithSocial(SocialLoginParams params) async {
+    state = AuthLoading();
+    try {
+      final isLoginSuccess = await _socialLoginUseCase.execute(params);
+      if (isLoginSuccess) {
+        final user = await _getCachedUserUseCase.execute();
+        if (user != null) {
+          state = AuthAuthenticated(user: user);
+        } else {
+          state = const AuthError(
+              message:
+                  "Social login successful but couldn't retrieve user data.");
+        }
+      } else {
+        state = const AuthError(message: "Social login failed.");
+      }
+    } catch (e) {
+      state = AuthError(message: "Social login failed: ${e.toString()}");
     }
   }
 

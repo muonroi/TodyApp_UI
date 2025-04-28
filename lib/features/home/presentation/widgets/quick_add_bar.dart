@@ -7,6 +7,7 @@ import 'package:tudy/features/home/data/models/datetime_package_result_model.dar
 import 'package:tudy/features/home/data/models/priority_info.dart';
 import 'package:tudy/features/home/data/enums/remider.dart';
 import 'package:tudy/features/home/data/models/todo_list_request_model.dart';
+import 'package:tudy/features/home/presentation/providers/quickadd_upcoming.dart';
 import 'package:tudy/features/home/presentation/providers/task_list/task_list_provider.dart';
 import 'package:tudy/features/home/presentation/widgets/date_time_picker_sheet.dart';
 import 'package:tudy/l10n/app_localizations.dart';
@@ -72,19 +73,17 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
   }
 
   void _onFocusChange() {
-    if (_focusNode.hasFocus && !_isExpanded) {
-      setState(() => _isExpanded = true);
-    }
-    if (!_focusNode.hasFocus && _controller.text.isEmpty) {
-      if (_selectedDate == null &&
-          _selectedTime == null &&
-          _selectedCategory == null &&
-          _selectedPriority == defaultPriority) {
-        setState(() => _isExpanded = false);
+    if (_focusNode.hasFocus) {
+      if (!_isExpanded) {
+        setState(() {
+          _isExpanded = true;
+        });
       }
-    }
-    if (!_focusNode.hasFocus) {
-      setState(() => _showSuggestions = false);
+    } else {
+      setState(() {
+        _showSuggestions = false;
+      });
+      _checkCollapse();
     }
   }
 
@@ -132,19 +131,14 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     final taskName = _controller.text.trim();
     if (taskName.isEmpty) return;
 
-    final TimeOfDay? reminderTime =
-        _selectedReminderTime; // Lấy giá trị TimeOfDay?
+    final TimeOfDay? reminderTime = _selectedReminderTime;
 
-    String?
-        reminderTimeStringForBackend; // Biến để lưu chuỗi gửi đi, khởi tạo là null
+    String? reminderTimeStringForBackend;
 
     if (reminderTime != null) {
-      // Lấy giờ và phút
       final int hour = reminderTime.hour;
       final int minute = reminderTime.minute;
 
-      // Định dạng thành chuỗi "0.hh:mm:00"
-      // Dùng padLeft(2, '0') để đảm bảo giờ và phút luôn có 2 chữ số (ví dụ: 09 thay vì 9)
       final String hourPadded = hour.toString().padLeft(2, '0');
       final String minutePadded = minute.toString().padLeft(2, '0');
 
@@ -549,6 +543,19 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<DateTime?>(quickAddIntentProvider, (previousDate, newDate) {
+      if (newDate != null) {
+        setState(() {
+          _selectedDate = newDate;
+          _selectedTime = null;
+          _isExpanded = true;
+        });
+        _focusNode.requestFocus();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          ref.read(quickAddIntentProvider.notifier).state = null;
+        });
+      }
+    });
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final currentPriorityInfo = priorityInfoMap[_selectedPriority]!;

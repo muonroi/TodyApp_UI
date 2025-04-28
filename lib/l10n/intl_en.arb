@@ -277,5 +277,73 @@
     "errorCreatingTask": "Error creating task",
     "@errorCreatingTask": {
         "description": "Error message displayed when task creation fails"
+    },
+    "addTask": "Add Task",
+    "@addTask": {
+        "description": "Label for the button to add a new task"
+    },
+    "noUpcomingTasks": "No upcoming tasks",
+    "@noUpcomingTasks": {
+        "description": "Message displayed when there are no upcoming tasks"
+    },
+    "language": "Language",
+    "@language": {
+        "description": "Label for the language selection option in the settings screen"
+    },
+    "deleteAccount": "Delete Account",
+    "@deleteAccount": {
+        "description": "Label for the button to delete the user account in the settings screen"
+    },
+    "deleteAccountConfirmation": "Are you sure you want to delete your account? This action cannot be undone.",
+    "@deleteAccountConfirmation": {
+        "description": "Confirmation message displayed when the user attempts to delete their account"
+    },
+    "delete": "Delete",
+    "@delete": {
+        "description": "Label for the button to delete a task or account"
+    },
+    "deleteAccountRequestSentPlaceholder": "Account deletion request sent. Please check your email for confirmation.",
+    "@deleteAccountRequestSentPlaceholder": {
+        "description": "Message displayed when the account deletion request is sent"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "Label for the button to log out of the application"
+    },
+    "logoutConfirmation": "Are you sure you want to log out?",
+    "@logoutConfirmation": {
+        "description": "Confirmation message displayed when the user attempts to log out"
+    },
+    "loginFailedError": "Login failed. Please check your credentials.",
+    "@loginFailedError": {
+        "description": "Error message displayed when login fails"
+    },
+    "loginGeneralError": "An unexpected error occurred during login",
+    "@loginGeneralError": {
+        "description": "General error message displayed during login"
+    },
+    "googleSignInError": "Error signing in with Google",
+    "@googleSignInError": {
+        "description": "Error message displayed when Google sign-in fails"
+    },
+    "appleSignInError": "Error signing in with Apple",
+    "@appleSignInError": {
+        "description": "Error message displayed when Apple sign-in fails"
+    },
+    "appleSignInNotAvailable": "Sign in with Apple is not available on this device",
+    "@appleSignInNotAvailable": {
+        "description": "Error message displayed when Apple sign-in is not available"
+    },
+    "socialLoginFailedError": "Social login failed.",
+    "@socialLoginFailedError": {
+        "description": "Error message displayed when social login fails"
+    },
+    "socialLoginGeneralError": "An unexpected error occurred during social login",
+    "@socialLoginGeneralError": {
+        "description": "General error message displayed during social login"
+    },
+    "logoutError": "Failed to log out",
+    "@logoutError": {
+        "description": "Error message displayed when logout fails"
     }
 }

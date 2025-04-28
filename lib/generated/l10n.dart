@@ -910,6 +910,178 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Task`
+  String get addTask {
+    return Intl.message(
+      'Add Task',
+      name: 'addTask',
+      desc: 'Label for the button to add a new task',
+      args: [],
+    );
+  }
+
+  /// `No upcoming tasks`
+  String get noUpcomingTasks {
+    return Intl.message(
+      'No upcoming tasks',
+      name: 'noUpcomingTasks',
+      desc: 'Message displayed when there are no upcoming tasks',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: 'Label for the language selection option in the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Delete Account`
+  String get deleteAccount {
+    return Intl.message(
+      'Delete Account',
+      name: 'deleteAccount',
+      desc:
+          'Label for the button to delete the user account in the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete your account? This action cannot be undone.`
+  String get deleteAccountConfirmation {
+    return Intl.message(
+      'Are you sure you want to delete your account? This action cannot be undone.',
+      name: 'deleteAccountConfirmation',
+      desc:
+          'Confirmation message displayed when the user attempts to delete their account',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: 'Label for the button to delete a task or account',
+      args: [],
+    );
+  }
+
+  /// `Account deletion request sent. Please check your email for confirmation.`
+  String get deleteAccountRequestSentPlaceholder {
+    return Intl.message(
+      'Account deletion request sent. Please check your email for confirmation.',
+      name: 'deleteAccountRequestSentPlaceholder',
+      desc: 'Message displayed when the account deletion request is sent',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: 'Label for the button to log out of the application',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get logoutConfirmation {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'logoutConfirmation',
+      desc: 'Confirmation message displayed when the user attempts to log out',
+      args: [],
+    );
+  }
+
+  /// `Login failed. Please check your credentials.`
+  String get loginFailedError {
+    return Intl.message(
+      'Login failed. Please check your credentials.',
+      name: 'loginFailedError',
+      desc: 'Error message displayed when login fails',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred during login`
+  String get loginGeneralError {
+    return Intl.message(
+      'An unexpected error occurred during login',
+      name: 'loginGeneralError',
+      desc: 'General error message displayed during login',
+      args: [],
+    );
+  }
+
+  /// `Error signing in with Google`
+  String get googleSignInError {
+    return Intl.message(
+      'Error signing in with Google',
+      name: 'googleSignInError',
+      desc: 'Error message displayed when Google sign-in fails',
+      args: [],
+    );
+  }
+
+  /// `Error signing in with Apple`
+  String get appleSignInError {
+    return Intl.message(
+      'Error signing in with Apple',
+      name: 'appleSignInError',
+      desc: 'Error message displayed when Apple sign-in fails',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Apple is not available on this device`
+  String get appleSignInNotAvailable {
+    return Intl.message(
+      'Sign in with Apple is not available on this device',
+      name: 'appleSignInNotAvailable',
+      desc: 'Error message displayed when Apple sign-in is not available',
+      args: [],
+    );
+  }
+
+  /// `Social login failed.`
+  String get socialLoginFailedError {
+    return Intl.message(
+      'Social login failed.',
+      name: 'socialLoginFailedError',
+      desc: 'Error message displayed when social login fails',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred during social login`
+  String get socialLoginGeneralError {
+    return Intl.message(
+      'An unexpected error occurred during social login',
+      name: 'socialLoginGeneralError',
+      desc: 'General error message displayed during social login',
+      args: [],
+    );
+  }
+
+  /// `Failed to log out`
+  String get logoutError {
+    return Intl.message(
+      'Failed to log out',
+      name: 'logoutError',
+      desc: 'Error message displayed when logout fails',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

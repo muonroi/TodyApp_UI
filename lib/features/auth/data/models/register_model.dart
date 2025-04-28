@@ -5,6 +5,9 @@ class RegisterModel {
   final String username;
   final String email;
   final String password;
+  final String? externalLoginProvider;
+  final String? externalLoginToken;
+  final bool? isUseThirdPartyLogin;
 
   RegisterModel({
     required this.username,
@@ -13,6 +16,9 @@ class RegisterModel {
     required this.name,
     required this.surname,
     required this.phoneNumber,
+    this.externalLoginProvider,
+    this.externalLoginToken,
+    this.isUseThirdPartyLogin,
   });
 
   Map<String, dynamic> toJson() {
@@ -23,6 +29,9 @@ class RegisterModel {
       'name': name,
       'surname': surname,
       'phoneNumber': phoneNumber,
+      'externalLoginProvider': externalLoginProvider,
+      'externalLoginToken': externalLoginToken,
+      'isUseThirdPartyLogin': isUseThirdPartyLogin,
     };
   }
 
@@ -34,6 +43,9 @@ class RegisterModel {
       name: json['name'],
       surname: json['surname'],
       phoneNumber: json['phoneNumber'],
+      externalLoginProvider: json['externalLoginProvider'],
+      externalLoginToken: json['externalLoginToken'],
+      isUseThirdPartyLogin: json['isUseThirdPartyLogin'],
     );
   }
 }

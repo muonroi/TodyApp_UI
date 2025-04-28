@@ -14,6 +14,9 @@ class RegisterUseCase {
       name,
       surname,
       phoneNumber,
+      "",
+      "",
+      false,
     );
   }
 }

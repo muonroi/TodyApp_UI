@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tudy/features/auth/domain/usecases/register_usecase.dart';
+import 'package:tudy/features/auth/domain/usecases/social_login_usecase.dart';
 
 import '../../data/providers/repository_providers.dart';
 
@@ -34,3 +35,8 @@ final registerUseCaseProvider = Provider<RegisterUseCase>((ref) {
 
   return RegisterUseCase(repository);
 }, name: 'RegisterUseCase');
+
+final socialLoginUseCaseProvider = Provider<SocialLoginUseCase>((ref) {
+  final repository = ref.watch(authRepositoryProvider);
+  return SocialLoginUseCase(repository);
+}, name: 'SocialLoginUseCase');

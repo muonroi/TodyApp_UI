@@ -1,4 +1,4 @@
-package com.example.tudy
+package com.muonroi.tudy
 
 import io.flutter.embedding.android.FlutterActivity
 
